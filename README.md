@@ -7,7 +7,7 @@
 
 x402blockchain explores payment activity, projects, services and facilitators across **Base, Solana, BSC and XRP Ledger**. The frontend uses a white-and-blue dashboard with chain filters, buyer/seller views, transaction details and source attribution. Our read-only chain collectors write to our database; the application does not purchase or proxy x402scan transaction data.
 
-**Status: active development.** Indexing is scoped and historical coverage is incomplete. The hosted preview runs batches on visits; an always-on collector requires separate hosting. Do not interpret an empty view as no chain activity. The website domain above is the project address; this repository does not configure its DNS.
+**Status: active development.** Indexing is scoped and historical coverage is incomplete. An independent collector now runs scheduled batches on our hosting; the Site reads payment APIs through its configured collector URL. Do not interpret an empty view as no chain activity. The website domain above is the project address; this repository does not configure its DNS.
 
 ## Features
 
@@ -53,7 +53,7 @@ node --env-file=.env scripts/collector.mjs
 
 The collector serves the frontend and read-only API at `http://127.0.0.1:4174`, with persistent SQLite storage and a collection loop. It performs no wallet transactions and needs no private keys. Use a process supervisor, persistent storage, backups and an HTTPS reverse proxy on your server. Dedicated/archive RPC capacity is needed for sustained backfill.
 
-The hosted D1 database and self-hosted SQLite database are **separate**. Running the collector locally does not populate the hosted website automatically. Full setup: [SELF_HOSTING.md](docs/SELF_HOSTING.md).
+The hosted D1 database and self-hosted SQLite database are **separate**. Set the server-only COLLECTOR_API_URL to connect the Site payment views to your hosted collector. Running a local collector alone does not configure that connection. See [operating guide](docs/OPERATIONS.md). Full setup: [SELF_HOSTING.md](docs/SELF_HOSTING.md).
 
 ## API examples
 
@@ -95,7 +95,7 @@ Start from `.env.example`. Keep RPC credentials, administrator settings and rece
 
 ## Validation and roadmap
 
-The current source passed 31 automated tests. A bounded live collection check read all four chains and stored Base/Solana records; that is not a completed historical backfill. Remaining work includes always-on production hosting, archive backfills, throughput/lag monitoring, broader payment adapters and validated valuation.
+The current source passed 35 automated tests. Scheduled production collection has stored Base, Solana and XRP records; BSC scans the documented router. A separate Base cursor backfills the preceding 24 hours. This is not completed historical coverage. Remaining work includes archival capacity, broader payment adapters, alerting and validated USD valuation. Public Solana RPC rate limits can slow progress.
 
 Contributions should preserve evidence labels and accurate coverage statements. See [CONTRIBUTING.md](CONTRIBUTING.md). Third-party registry metadata retains its attribution in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). No new license grant for project-owned code is implied.
 

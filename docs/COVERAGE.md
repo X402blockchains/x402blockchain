@@ -15,6 +15,6 @@ Our index is incomplete and must not be described as a global x402 database.
 
 Base and Solana facilitator association is inferred. XRP tags can be set by others. These signals do not prove delivery of an HTTP resource or ownership of a project. Catalog names are reported metadata; shared recipient addresses can be ambiguous.
 
-The hosted site runs small batches on demand and has no permanent scheduler configured. The self-hosted collector runs a continuous loop but requires an always-on host and sufficient RPC capacity. Neither environment has completed full historical backfills. Their databases are separate.
+The independent collector runs scheduled batches on our hosting, and the Site reads its payment APIs through COLLECTOR_API_URL. Base has separate live and 24-hour historical cursors. Neither full historical coverage nor all BSC payment paths are complete. Public Solana RPC rate limits affect throughput. See OPERATIONS.md.
 
 See [Self-hosting](SELF_HOSTING.md) for exact filters, unsupported transaction paths, starting cursors and operating instructions. Individual transaction lookup does not automatically classify ordinary transfers as x402 payments.

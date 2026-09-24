@@ -20,7 +20,7 @@ for p in projects:
  desc=(p.get('description') or 'Explore published x402 payment endpoints.')[:500]
  networks=', '.join(p.get('networks',[]));count=p['serviceCount']
  body='<h1>'+e(name)+'</h1><p>'+e(desc)+'</p><p><b>Networks:</b> '+e(networks)+'</p><p><b>Published endpoints:</b> '+str(count)+'</p><p><a href="'+e(origin,quote=True)+'" rel="nofollow noopener">Official website</a> · <a href="/#origin/'+quote(origin,safe='')+'">Open activity, endpoints and payment details</a></p>'
- if origin=='https://www.api-xpay.com':body+='<p>X Pay publishes pay-per-request utility APIs using USDC on Base. Its role as a payment facilitator has not been verified. A paid API listing does not establish facilitator status.</p>'
+ if origin=='https://www.api-xpay.com':body+='<p>X Pay publishes pay-per-request utility APIs using USDC on Base. X Pay also publishes a separate facilitator at facilitator-xpay.llc, whose live capabilities report x402 v2 exact payments on Base. Its upstream x402scan listing pull request is pending.</p>'
  target=root/path.lstrip('/');target.mkdir(parents=True,exist_ok=True);(target/'index.html').write_text(document(name,desc,path,body))
  cards.append('<li><h2><a href="'+path+'">'+e(name)+'</a></h2><p>'+e(networks)+' · '+str(count)+' endpoints</p><small>'+e(origin)+'</small></li>');paths.append(path)
 (root/'directory/index.html').write_text(document('x402 project directory','Browse catalog-listed x402 projects and payment APIs across Base, Solana, XRP and BSC.','/directory/','<h1>x402 project directory</h1><p>Explore '+str(len(projects))+' catalog-listed project origins. Listings reflect published provider catalogs; they are not endorsements or proof of ownership.</p><ul class="grid">'+''.join(cards)+'</ul>'))
@@ -31,3 +31,4 @@ if 'rel="canonical"' not in s:s=s.replace('</head>','<link rel="canonical" href=
 if 'href="/directory/"' not in s:s=s.replace('Coverage &amp; methodology','Coverage &amp; methodology').replace('</footer>','<a href="/directory/">Browse project directory</a></footer>')
 p.write_text(s)
 print('Generated',len(projects),'project pages and',len(paths),'sitemap URLs')
+

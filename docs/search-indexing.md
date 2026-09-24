@@ -7,3 +7,5 @@ Regenerate with `python3 scripts/search-pages.py public` before deployment. It r
 In Google Search Console and Bing Webmaster Tools, verify ownership of https://x402blockchains.com and submit https://x402blockchains.com/sitemap.xml. Search-engine acceptance and ranking are not guaranteed. No verified account submission has been performed.
 
 X Pay verification (2026-09-25): the official OpenAPI describes 16 paid utility APIs on Base, with no facilitator verify/settle routes. GET /supported, /facilitator/supported and /x402/supported returned 404. This does not prove no facilitator exists; its role remains unverified pending official documentation and capability evidence.
+
+Update: PR #1218 identified the separate facilitator domain https://facilitator-xpay.llc. Its /supported endpoint responds with x402Version 2, exact and eip155:8453. A published transaction independently matches signer 0x589a2314a2e05f45e40c4823da3ba58d421db3d8 calling Base USDC. X Pay is now independently listed; the upstream PR remains open.

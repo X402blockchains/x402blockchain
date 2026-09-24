@@ -1,20 +1,17 @@
-# Coverage and methodology
+# Data coverage
 
-Our index is incomplete and must not be described as a global x402 database.
+| Data | Implemented scope | Limit |
+| --- | --- | --- |
+| Services and projects | Public catalog snapshot plus paginated refresh | Provider-reported metadata, not every project globally |
+| Facilitators | 44 attributed profiles and capability checks | Registry metadata does not grant private payment feeds |
+| Base payments | Finalized USDC Transfer events in transactions submitted by documented facilitators, including router calls | Inferred x402 association; bounded live/history scans; resource may be unknown |
+| BSC payments | Finalized Settled events at the documented x402-exec router | Only this router and the displayed scanned range |
+| Solana and XRP payments | Facilitator-signed Solana SPL transfers and T54-tagged validated XRP payments | Partial account/ledger history; attribution is inferred |
+| Buyers and sellers | Addresses in retained settled receipts | Not unique people; not entire wallet history |
+| USD volume | Unavailable | No invented conversion or stablecoin parity assumption |
 
-| Data | Current scope |
-| --- | --- |
-| Services/projects | Public provider catalogs, grouped by endpoint and URL origin |
-| Facilitators | Attributed registry metadata and capability checks |
-| Base | Finalized USDC authorization transfers from documented facilitator senders |
-| Solana | Finalized facilitator-signed original SPL Token transfers |
-| BSC | Finalized events from the documented x402-exec router |
-| XRP | Validated Payments with the published T54 SourceTag, using delivered amounts |
-| Buyers/sellers | Addresses in retained settled records, not unique people |
-| USD volume | Unavailable without verified valuation |
+The custom domain runs a persistent read API and a minute-based collector on cPanel. Public RPC limits and historical backfill throughput can leave the collector behind the chain tip. Dedicated RPC access, scheduling, larger validated ingestion budgets, backfills and additional protocol adapters are needed before claiming comprehensive coverage. Source errors and checkpoints must remain visible.
 
-Base and Solana facilitator association is inferred. XRP tags can be set by others. These signals do not prove delivery of an HTTP resource or ownership of a project. Catalog names are reported metadata; shared recipient addresses can be ambiguous.
+Successful direct transaction lookup does not prove an x402 payment and never adds ordinary transfers to receipt totals. Read-only indexing never executes payments.
 
-The independent collector runs scheduled batches on our hosting, and the Site reads its payment APIs through COLLECTOR_API_URL. Base has separate live and 24-hour historical cursors. Neither full historical coverage nor all BSC payment paths are complete. Public Solana RPC rate limits affect throughput. See OPERATIONS.md.
-
-See [Self-hosting](SELF_HOSTING.md) for exact filters, unsupported transaction paths, starting cursors and operating instructions. Individual transaction lookup does not automatically classify ordinary transfers as x402 payments.
+Project icons: 469 website-declared icon sets were discovered across 1,338 checked catalog/provider origins. Other pages try favicon.ico and retain initials when unavailable. This is not complete logo coverage.

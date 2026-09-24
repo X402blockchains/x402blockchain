@@ -42,7 +42,7 @@ Back up the SQLite database using SQLite's backup operation, rotate collector lo
 
 ## Public-provider coverage update
 
-Base reads USDC Transfer logs from successful transactions submitted by documented facilitators, including router calls. This is facilitator association, not proof of an HTTP purchase. Block headers are prefetched in groups of four; checkpoints still commit only after receipt validation.
+Base reads USDC Transfer logs from successful transactions submitted by documented facilitators, including router calls. This is facilitator association, not proof of an HTTP purchase. Block headers are prefetched in groups of four with a shared public-provider request throttle; checkpoints still commit only after receipt validation.
 
 BSC has independent live and history cursors. The history reader starts 230,400 blocks before the initial live range by default, configurable with BSC_HISTORY_START_BLOCK before initialization. Both readers cover only the documented x402-exec settlement router. An empty matching-event result must not be presented as complete BSC coverage.
 
@@ -50,4 +50,4 @@ Project icons are discovered from publicly declared HTML icon links using script
 
 x402scan's documented /api/x402 endpoints charge per request; they are not connected. Its public source shows separate BigQuery, Bitquery and CDP data adapters. Running its frontend does not grant access to its historical database. See https://www.x402scan.com/openapi.json and https://github.com/Merit-Systems/x402scan/tree/main/sync/transfers/trigger/chains/evm/base.
 
-Public defaults: Base uses https://base.drpc.org (https://drpc.org/docs/base-api/chaininfo/eth_chainId). BSC history uses 100-block batches through https://bsc.drpc.org (https://blog.drpc.org/bnb-chain-rpc-infrastructure-guide/); its override is BSC_HISTORY_RPC_URL. Each sync checks the chain ID and finalized checkpoint. Provider errors retain the cursor and never invent records.
+Public defaults: Base uses https://mainnet.base.org. BSC history uses 100-block batches through https://bsc.drpc.org (https://blog.drpc.org/bnb-chain-rpc-infrastructure-guide/); its override is BSC_HISTORY_RPC_URL. Each sync checks the chain ID and finalized checkpoint. Provider errors retain the cursor and never invent records.

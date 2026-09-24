@@ -1,0 +1,34 @@
+name: Facilitator listing
+description: Add or correct a facilitator using public evidence.
+title: "[Facilitator] "
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Facilitator name and website
+    validations:
+      required: true
+  - type: textarea
+    id: capabilities
+    attributes:
+      label: Capability endpoint and documentation
+      description: Include networks, schemes, versions and assets. Never include credentials.
+    validations:
+      required: true
+  - type: textarea
+    id: addresses
+    attributes:
+      label: Signer addresses and settlement examples
+      description: Give the chain for each address, historical status, first activity date and example transaction hashes.
+    validations:
+      required: true
+  - type: input
+    id: logo
+    attributes:
+      label: Official logo URL
+  - type: textarea
+    id: provenance
+    attributes:
+      label: Public source references
+    validations:
+      required: true

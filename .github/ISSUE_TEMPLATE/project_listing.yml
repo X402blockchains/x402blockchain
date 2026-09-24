@@ -1,0 +1,33 @@
+name: Project listing
+description: Request a project, service or logo update.
+title: "[Project] "
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Project name
+    validations:
+      required: true
+  - type: input
+    id: website
+    attributes:
+      label: Official HTTPS website
+    validations:
+      required: true
+  - type: textarea
+    id: resources
+    attributes:
+      label: Endpoints and discovery metadata
+      description: Include HTTP methods, networks, public catalog or OpenAPI URL, and payment requirements. No secrets.
+    validations:
+      required: true
+  - type: input
+    id: logo
+    attributes:
+      label: Official logo URL
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Supporting documentation and requested change
+    validations:
+      required: true

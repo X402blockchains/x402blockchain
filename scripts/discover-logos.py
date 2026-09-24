@@ -2,12 +2,26 @@
 Resolve and pin public IPs before fetching; never follow redirects implicitly.
 Run after refreshing catalog-snapshot.mjs. No credentials are used.
 """
-import concurrent.futures, json, ipaddress, socket, subprocess, urllib.parse
+import concurrent.futures, json, ipaddress, socket, subprocess, urllib.parse, urllib.request
 from html.parser import HTMLParser
 from pathlib import Path
 snapshot=json.loads(Path('server/catalog-snapshot.mjs').read_text().split('export const SNAPSHOT=',1)[1].rstrip(';\n'))
 registry=json.loads(Path('server/facilitator-registry.mjs').read_text().split('export const REGISTRY=',1)[1].rstrip(';\n'))
 origins=sorted(set(urllib.parse.urlsplit(r['url']).scheme+'://'+urllib.parse.urlsplit(r['url']).netloc for r in snapshot['resources'])|set(urllib.parse.urlsplit(r.get('docs') or r['url']).scheme+'://'+urllib.parse.urlsplit(r.get('docs') or r['url']).netloc for r in registry))
+# Include every currently listed origin, not only the bundled snapshot.
+for page_number in range(1,101):
+ with urllib.request.urlopen('https://x402blockchains.com/api/ecosystem?limit=100&page='+str(page_number),timeout=40) as r:live=json.load(r)
+ origins=sorted(set(origins)|{p['website'] for p in live['items']})
+ if page_number*100>=live['total']:break
+origins=sorted(set(origins)|{'https://x-pay.llc','https://www.api-xpay.com'})
+previous=json.loads(Path('public/logos.json').read_text())
+def image_ok(url):
+ dest=public(url)
+ if not dest:return False
+ u,ip=dest;ip='['+ip+']' if ':' in ip else ip
+ r=subprocess.run(['curl','-sS','-I','--max-time','4','--resolve',u.hostname+':443:'+ip,url],capture_output=True)
+ text=r.stdout.decode('latin1').lower()
+ return not r.returncode and (' 200 ' in text or ' 200\r' in text) and any(t in text for t in ['content-type: image/','content-type: application/octet-stream'])
 class Icons(HTMLParser):
  def __init__(self):super().__init__();self.links=[]
  def handle_starttag(self,tag,attrs):
@@ -38,19 +52,28 @@ def page(url):
  return None
 def discover(origin):
  try:
-  found=page(origin)
-  if not found:return origin,[]
-  url,html=found;parser=Icons();parser.feed(html);icons=[]
-  for href in parser.links:
-   icon=urllib.parse.urljoin(url,href);u=urllib.parse.urlsplit(icon)
-   if u.scheme=='https' and not u.username and not u.password and not u.port and public(icon) and icon not in icons:icons.append(icon)
-  return origin,icons[:4]
+  candidates=list(previous.get(origin,[]));origins_to_check=[origin]
+  host=urllib.parse.urlsplit(origin).hostname
+  # Only conventional API hostnames: never infer parent brands for hosted tenants.
+  if host.startswith('api.') and len(host.split('.'))>=3:origins_to_check.append('https://'+host[4:])
+  for site in origins_to_check:
+   found=page(site)
+   if found:
+    url,content=found;parser=Icons();parser.feed(content)
+    candidates.extend(urllib.parse.urljoin(url,href) for href in parser.links)
+   candidates.append(site+'/favicon.ico')
+  verified=[]
+  for icon in dict.fromkeys(candidates):
+   if image_ok(icon):verified.append(icon)
+   if len(verified)>=2:break
+  return origin,verified
  except Exception:return origin,[]
 manifest={};completed=0
-with concurrent.futures.ThreadPoolExecutor(max_workers=12) as pool:
+with concurrent.futures.ThreadPoolExecutor(max_workers=20) as pool:
  for origin,icons in pool.map(discover,origins):
   completed+=1
   if icons:manifest[origin]=icons
   if completed%100==0:print(f'Checked {completed}/{len(origins)} origins; {len(manifest)} declared icon sets',flush=True)
+Path('public/logo-coverage.json').write_text(json.dumps({'checkedOrigins':len(origins),'verifiedOrigins':len(manifest),'missingOrigins':[o for o in origins if o not in manifest]},separators=(',',':')))
 Path('public/logos.json').write_text(json.dumps(manifest,separators=(',',':'))+'\n')
 print(f'Complete: {len(manifest)} declared icon sets across {len(origins)} origins',flush=True)

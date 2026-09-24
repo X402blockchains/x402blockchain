@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /data/
+Sitemap: https://x402blockchains.com/sitemap.xml

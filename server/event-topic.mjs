@@ -1,0 +1,1 @@
+export const BSC_TOPIC="0x6882445b02309cf56f64df166a7bee0d3999720ed1da3dd13d636dd42f1deae4";

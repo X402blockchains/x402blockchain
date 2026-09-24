@@ -1,0 +1,12 @@
+import fs from 'node:fs';
+import {keccak_256} from '@noble/hashes/sha3.js';
+import {SETTLED_SIGNATURE} from '../server/bsc.mjs';
+fs.writeFileSync('server/event-topic.mjs','export const BSC_TOPIC='+JSON.stringify('0x'+Buffer.from(keccak_256(new TextEncoder().encode(SETTLED_SIGNATURE))).toString('hex'))+';');
+fs.mkdirSync('dist/server',{recursive:true});
+for(const f of ['sources.mjs','backend.mjs','bsc.mjs','event-topic.mjs','facilitator-registry.mjs','catalog-snapshot.mjs','lookup.mjs','participants.mjs','base.mjs','analytics.mjs','native-indexers.mjs','openapi.mjs'])fs.copyFileSync('server/'+f,'dist/server/'+f);
+const assets=Object.fromEntries(['index.html','style.css','app.js'].map(f=>['/'+(f==='index.html'?'':f),fs.readFileSync('public/'+f,'utf8')]));
+fs.writeFileSync('dist/server/assets.mjs','export default '+JSON.stringify(assets)+';');
+fs.writeFileSync('dist/server/index.js',`import assets from './assets.mjs';import {handleApi,syncAll} from './backend.mjs';export default{async fetch(req,env,ctx){const path=new URL(req.url).pathname;if(path.startsWith('/api/'))return handleApi(req,env,ctx);if(!['GET','HEAD'].includes(req.method))return new Response('Method not allowed',{status:405});const content=assets[path];if(content===undefined)return new Response('Not found',{status:404});return new Response(req.method==='HEAD'?null:content,{headers:{'content-type':path.endsWith('.js')?'text/javascript;charset=utf-8':path.endsWith('.css')?'text/css;charset=utf-8':'text/html;charset=utf-8','cache-control':'no-cache','x-content-type-options':'nosniff','referrer-policy':'strict-origin-when-cross-origin','content-security-policy':\"default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'self'; object-src 'none'\"}})},async scheduled(event,env,ctx){ctx.waitUntil(syncAll(env))}};`);
+fs.mkdirSync('dist/.openai',{recursive:true});fs.copyFileSync('.openai/hosting.json','dist/.openai/hosting.json');
+for(const f of ['index.html','style.css','app.js'])fs.copyFileSync('public/'+f,'dist/'+f);
+console.log('Built Worker, API and frontend assets.');

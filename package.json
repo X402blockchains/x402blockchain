@@ -1,0 +1,20 @@
+{
+  "name": "x402blockchain",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "db:generate": "drizzle-kit generate",
+    "dev": "node scripts/build.mjs && node scripts/dev.mjs",
+    "collector": "node scripts/collector.mjs"
+  },
+  "dependencies": {
+    "drizzle-orm": "0.45.2"
+  },
+  "devDependencies": {
+    "drizzle-kit": "0.31.10",
+    "@noble/hashes": "2.0.1"
+  },
+  "packageManager": "pnpm@11.25.0"
+}

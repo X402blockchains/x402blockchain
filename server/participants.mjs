@@ -1,0 +1,12 @@
+export function validateAddress(network,address){return typeof address==='string'&&(['Base','BSC'].includes(network)?/^0x[0-9a-fA-F]{40}$/.test(address):network==='Solana'?/^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(address):network==='XRP'?/^r[1-9A-HJ-NP-Za-km-z]{24,34}$/.test(address):false)}
+export function canonicalAddress(network,address){return ['Base','BSC'].includes(network)?address.toLowerCase():address}
+export async function listParticipants(db,{role,network,days,page,limit,q}){
+ const column=role==='buyers'?'payer':'pay_to',opposite=role==='buyers'?'pay_to':'payer';
+ const clauses=["status='settled'",`${column} IS NOT NULL`,`${column}<>''`,'timestamp>=?'];const binds=[days?Date.now()-days*86400000:0];
+ if(network!=='All'){clauses.push('network=?');binds.push(network)}if(q){clauses.push(`instr(lower(${column}),?)>0`);binds.push(q.toLowerCase())}
+ const where=clauses.join(' AND '),normalized=`CASE WHEN network IN ('Base','BSC') THEN lower(${column}) ELSE ${column} END`;
+ const count=await db.prepare(`SELECT COUNT(*) AS total FROM (SELECT network,${normalized} AS address FROM receipts WHERE ${where} GROUP BY network,address)`).bind(...binds).first();
+ const rows=(await db.prepare(`SELECT network,${normalized} AS address,COUNT(*) AS receipts,COUNT(DISTINCT \`transaction\`) AS transactions,COUNT(DISTINCT CASE WHEN network IN ('Base','BSC') THEN lower(${opposite}) ELSE ${opposite} END) AS counterparties,MIN(timestamp) AS firstSeen,MAX(timestamp) AS lastSeen FROM receipts WHERE ${where} GROUP BY network,address ORDER BY transactions DESC,lastSeen DESC LIMIT ? OFFSET ?`).bind(...binds,limit,(page-1)*limit).all()).results;
+ return{items:rows,total:count.total,page,limit,role,coverage:'Settled indexed receipts only. Addresses are not unique people; unindexed history is excluded.'};
+}
+export async function addressActivity(db,{network,address,days,page,limit}){const target=canonicalAddress(network,address),compare=column=>['Base','BSC'].includes(network)?`lower(${column})` :column;const where=`network=? AND (${compare('payer')}=? OR ${compare('pay_to')}=?) AND timestamp>=?`,binds=[network,target,target,days?Date.now()-days*86400000:0];const count=await db.prepare('SELECT COUNT(*) AS total FROM receipts WHERE '+where).bind(...binds).first();const items=(await db.prepare('SELECT * FROM receipts WHERE '+where+' ORDER BY timestamp DESC LIMIT ? OFFSET ?').bind(...binds,limit,(page-1)*limit).all()).results;return{network,address:target,total:count.total,items,page,limit};}

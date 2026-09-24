@@ -1,0 +1,33 @@
+import {REGISTRY} from './facilitator-registry.mjs';
+export const NETWORKS=[{id:'Base',caip:'eip155:8453',explorer:'https://basescan.org/tx/'},{id:'Solana',caip:'solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp',explorer:'https://solscan.io/tx/'},{id:'XRP',caip:'xrpl:0',explorer:'https://livenet.xrpl.org/transactions/'},{id:'BSC',caip:'eip155:56',explorer:'https://bscscan.com/tx/'}];
+const ORIGINAL_SOURCES=[
+{id:'payai',name:'PayAI',url:'https://facilitator.payai.network',docs:'https://facilitator.payai.network/developers',supported:'/supported',discovery:'/discovery/resources',stats:'/discovery/stats',declared:['Base','Solana']},
+{id:'t54',name:'T54 XRPL',url:'https://xrpl-facilitator-mainnet.t54.ai',docs:'https://xrpl-x402.t54.ai/',supported:'/supported',declared:['XRP']},
+{id:'mogami',name:'Mogami',url:'https://facilitator.mogami.tech',docs:'https://facilitator.mogami.tech',supported:'/supported',declared:['Base']},
+{id:'dexter',name:'Dexter',url:'https://x402.dexter.cash',docs:'https://dexter.cash/facilitator',supported:'/supported',declared:['Base','Solana','BSC']},
+{id:'wtf',name:'WTF Academy / x402x',url:'https://facilitator.x402x.ai',docs:'https://docs.x402x.ai/en/user-guide/facilitator',supported:'/supported',declared:['BSC']},
+{id:'b402',name:'b402',url:'https://facilitatorv3.b402.ai',docs:'https://docs.b402.ai/developers/facilitator/overview',supported:'/supported',declared:['Base','BSC']},
+{id:'cdp',name:'Coinbase CDP',url:'https://api.cdp.coinbase.com/platform/v2/x402',docs:'https://docs.cdp.coinbase.com/x402/docs/quickstart-sellers',declared:['Base','Solana'],note:'Authenticated provider; credentials and integration required.'},
+{id:'corbits',name:'Corbits',url:'https://corbits.dev',docs:'https://corbits.dev',declared:['Base','Solana'],note:'Provider listed by the x402 Foundation; API access not configured.'},
+{id:'meridian',name:'Meridian',url:'https://mrdn.finance',docs:'https://mrdn.finance',declared:[],note:'Provider listed by the x402 Foundation; target networks not independently checked.'},
+{id:'solvador',name:'Solvador',url:'https://solvador.com',docs:'https://solvador.com',declared:['Solana'],note:'Provider listed by the x402 Foundation; API access not configured.'},
+{id:'fireblocks',name:'Fireblocks',url:'https://developers.fireblocks.com',docs:'https://developers.fireblocks.com/docs/x402-facilitator-overview',declared:[],note:'Managed provider; API access not configured.'},
+{id:'near',name:'NEAR x402 / mikedotexe',url:'https://x402.mikedotexe.com',docs:'https://x402.mikedotexe.com',declared:['Base'],note:'Base support documented by the x402 Foundation; discovery feed not configured.'},
+{id:'x402scan',name:'x402scan / Merit Systems',url:'https://www.x402scan.com',docs:'https://www.merit.systems/developers',declared:['Base','Solana'],note:'Indexer API access not connected; payment or provider access may be required.'}
+];
+const merged=new Map(ORIGINAL_SOURCES.map(s=>[s.id,{...s,role:s.id==='x402scan'?'indexer':'facilitator',reference:s.docs}]));
+for(const r of REGISTRY){const old=merged.get(r.id);merged.set(r.id,{...old,...r,role:'facilitator',declared:[...new Set([...(old?.declared||[]),...r.declared])],note:r.authenticated?'Provider credentials are required for protected endpoints.':r.deprecated?'Deprecated in the upstream registry; retained for historical reference.':undefined});}
+merged.get('dexter').url='https://x402.dexter.cash';
+const foundation=[
+ ['stellar','Built on Stellar','https://developers.stellar.org/docs/build/apps/x402/built-on-stellar',['Stellar']],
+ ['celo','Celo Facilitator','https://x402.celo.org',['Celo']],
+ ['canton','FTP Canton','https://www.ftptech.xyz/x402',['Canton']],
+ ['hpp','HPP Facilitator','https://docs.hpp.io/x402/facilitator',['HPP']],
+ ['polygon','Polygon Facilitator','https://docs.polygon.technology/payment-services/agentic-payments/x402/intro/',['Polygon']]
+];
+for(const [id,name,docs,declared] of foundation)merged.set(id,{id,name,url:docs,docs,declared,role:'facilitator',reference:'https://github.com/x402-foundation/x402/blob/main/docs/dev-tools/facilitators.md',note:'Listed in the x402 Foundation directory. Outside our four-network transaction scope; no live connector configured.'});
+export const SOURCES=[...merged.values()];
+export function networkName(v){return NETWORKS.find(n=>n.caip===v)?.id||({base:'Base',solana:'Solana',bsc:'BSC','bnb-chain':'BSC',xrpl:'XRP'}[v])||null}
+export function safeUrl(value){try{const u=new URL(value);if(u.protocol!=='https:'||u.username||u.password||u.port||u.hostname==='localhost'||!u.hostname.includes('.')||/^[\d.]+$/.test(u.hostname)||u.hostname.includes(':')||/\.(local|internal|localhost|test|invalid)$/.test(u.hostname))return null;return u.href}catch{return null}}
+export function normalizeResources(data,source){const rows=Array.isArray(data?.items)?data.items:[];return rows.flatMap(r=>{const url=safeUrl(r.resource?.url||r.resource||r.url);if(!url)return[];const accepts=(Array.isArray(r.accepts)?r.accepts:[]).filter(a=>networkName(a.network)).map(a=>({network:networkName(a.network),networkId:a.network,scheme:String(a.scheme||'exact').slice(0,50),asset:String(a.asset||'').slice(0,150),amount:String(a.amount??a.maxAmountRequired??''),payTo:String(a.payTo||'').slice(0,150)}));if(!accepts.length)return[];const name=String(r.serviceName||r.metadata?.serviceName||new URL(url).hostname).slice(0,150);return[{url,name,description:String(r.description||r.metadata?.description||'').slice(0,1600),method:String(r.method||r.extensions?.bazaar?.info?.input?.method||'GET').slice(0,20),type:String(r.type||'http').slice(0,30),accepts,source,updatedAt:r.lastUpdated||null}]} )}
+export function dedupeResources(resources){const map=new Map();for(const r of resources){const key=r.method+' '+r.url;const prior=map.get(key);if(!prior)map.set(key,{...r,sources:[r.source]});else{if(!prior.sources.includes(r.source))prior.sources.push(r.source);for(const a of r.accepts)if(!prior.accepts.some(b=>JSON.stringify(a)===JSON.stringify(b)))prior.accepts.push(a)}}return [...map.values()]}

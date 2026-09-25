@@ -41,7 +41,12 @@ export async function syncBaseAddressHistory(env){const db=env.DB;
    // Persist candidate queue before verification, so failed RPC requests never skip a page.
    await db.prepare('UPDATE address_backfills SET queue=?,cursor=?,complete=0 WHERE id=?').bind(JSON.stringify(queue),JSON.stringify(cursor),row.id).run();
   }else complete=!cursor;
-  const subset=queue.slice(0,10),records=await verifyCandidates(env,subset);await saveVerified(db,records);queue=queue.slice(subset.length);
-  await db.prepare('UPDATE address_backfills SET queue=?,complete=?,verified=verified+?,checked_at=?,error=NULL WHERE id=?').bind(JSON.stringify(queue),complete&&!queue.length?1:0,records.length,Date.now(),row.id).run();return{job:row.id,verified:records.length,inserted:records.length,remainingCandidates:queue.length};
+  const began=Date.now();let verified=0,processed=0;
+  // Commit each verified group before requesting another: timeouts preserve progress.
+  do{const subset=queue.slice(0,5),records=await verifyCandidates(env,subset);await saveVerified(db,records);queue=queue.slice(subset.length);verified+=records.length;processed+=subset.length;
+   await db.prepare('UPDATE address_backfills SET queue=?,complete=?,verified=verified+?,checked_at=?,error=NULL WHERE id=?').bind(JSON.stringify(queue),complete&&!queue.length?1:0,records.length,Date.now(),row.id).run();
+   if(queue.length)await new Promise(resolve=>setTimeout(resolve,250));
+  }while(queue.length&&processed<50&&Date.now()-began<25000);
+  return{job:row.id,verified,inserted:verified,processed,remainingCandidates:queue.length};
  }catch(e){await db.prepare('UPDATE address_backfills SET error=?,checked_at=? WHERE id=?').bind(String(e.message).slice(0,200),Date.now(),row.id).run();return{job:row.id,error:e.message,inserted:0}}
 }

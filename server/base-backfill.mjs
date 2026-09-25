@@ -25,9 +25,12 @@ export async function saveVerified(db,records){const writes=[];for(const r of re
 export async function syncBaseAddressHistory(env){const db=env.DB;
  await db.prepare('CREATE TABLE IF NOT EXISTS address_backfills(id TEXT PRIMARY KEY,address TEXT NOT NULL,kind TEXT NOT NULL,cursor TEXT,queue TEXT NOT NULL DEFAULT \'[]\',complete INTEGER NOT NULL DEFAULT 0,checked_at INTEGER NOT NULL DEFAULT 0,verified INTEGER NOT NULL DEFAULT 0,error TEXT)').run();
  const addresses=[...new Set(SOURCES.flatMap(s=>(s.addresses||[]).filter(a=>a.network==='Base').map(a=>a.address.toLowerCase())))];
- const jobs=[{id:'xpay-merchant',address:XPAY,kind:'token-transfers'},...addresses.map(address=>({id:'sender-'+address,address,kind:'transactions'}))];
+ const merchants=[...new Set((env.BASE_MERCHANT_ADDRESSES||[]).filter(a=>/^0x[0-9a-f]{40}$/i.test(a)).map(a=>a.toLowerCase()))].filter(a=>a!==XPAY);
+ const jobs=[{id:'xpay-merchant',address:XPAY,kind:'token-transfers'},...merchants.map(address=>({id:'merchant-'+address,address,kind:'token-transfers'})),...addresses.map(address=>({id:'sender-'+address,address,kind:'transactions'}))];
  for(const j of jobs)await db.prepare('INSERT INTO address_backfills(id,address,kind) VALUES(?,?,?) ON CONFLICT(id) DO NOTHING').bind(j.id,j.address,j.kind).run();
- // Alternate priority merchant history with the oldest unprocessed facilitator.
+ // Revisit completed addresses daily for payments newer than their last sweep.
+ await db.prepare('UPDATE address_backfills SET complete=0,cursor=NULL,queue=? WHERE complete=1 AND checked_at<?').bind('[]',Date.now()-86400000).run();
+ // Give X Pay a bounded priority share while rotating all other known addresses.
  const clock=Math.floor(Date.now()/60000);const job=clock%3===0?await db.prepare("SELECT * FROM address_backfills WHERE id='xpay-merchant' AND complete=0").first():clock%3===1?await db.prepare("SELECT * FROM address_backfills WHERE id=? AND complete=0").bind('sender-'+XPAY).first():null;
  const row=job||await db.prepare('SELECT * FROM address_backfills WHERE complete=0 ORDER BY checked_at,id LIMIT 1').first();if(!row)return{state:'completed_known_addresses',inserted:0};
  try{let queue=JSON.parse(row.queue),cursor=row.cursor?JSON.parse(row.cursor):null,complete=false;
@@ -38,7 +41,7 @@ export async function syncBaseAddressHistory(env){const db=env.DB;
    // Persist candidate queue before verification, so failed RPC requests never skip a page.
    await db.prepare('UPDATE address_backfills SET queue=?,cursor=?,complete=0 WHERE id=?').bind(JSON.stringify(queue),JSON.stringify(cursor),row.id).run();
   }else complete=!cursor;
-  const subset=queue.slice(0,25),records=await verifyCandidates(env,subset);await saveVerified(db,records);queue=queue.slice(subset.length);
+  const subset=queue.slice(0,10),records=await verifyCandidates(env,subset);await saveVerified(db,records);queue=queue.slice(subset.length);
   await db.prepare('UPDATE address_backfills SET queue=?,complete=?,verified=verified+?,checked_at=?,error=NULL WHERE id=?').bind(JSON.stringify(queue),complete&&!queue.length?1:0,records.length,Date.now(),row.id).run();return{job:row.id,verified:records.length,inserted:records.length,remainingCandidates:queue.length};
  }catch(e){await db.prepare('UPDATE address_backfills SET error=?,checked_at=? WHERE id=?').bind(String(e.message).slice(0,200),Date.now(),row.id).run();return{job:row.id,error:e.message,inserted:0}}
 }

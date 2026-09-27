@@ -1,15 +1,11 @@
-## What changes?
+## Change
+Describe the problem and resulting behavior.
 
-Describe the problem and the resulting behavior.
+## Verification
+List checks performed and public evidence for data changes.
 
-## Evidence and validation
+## Listing proposals
+Link the listing issue and public ownership/payment evidence where applicable. Approval does not automatically activate indexing.
 
-List relevant tests or checks. For provider or logo changes, link the official sources. For indexing changes, describe evidence, finality, duplicate handling and checkpoint behavior.
-
-## Deployment and data
-
-Note any migration, configuration, restart or backfill requirements. Describe any coverage limits that users need to understand.
-
-- [ ] No secrets, local databases or private customer details are included.
-- [ ] Source attribution and coverage statements remain accurate.
-- [ ] Sample data is clearly labeled and excluded from real totals.
+## Privacy
+Confirm no secrets, private contacts, local databases or machine-specific deployment identities are included.

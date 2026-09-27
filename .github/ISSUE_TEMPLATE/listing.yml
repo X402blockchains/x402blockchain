@@ -1,0 +1,55 @@
+name: Project / AI agent listing
+description: Request a project, paid API or AI agent listing
+title: "[Listing] "
+body:
+  - type: markdown
+    attributes:
+      value: "All issue contents are public. Never include secrets or private contact information. Review is manual."
+  - type: input
+    id: name
+    attributes:
+      label: Project name
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Listing type
+      options:
+        - Project / API
+        - AI agent
+        - Project and facilitator (also complete facilitator evidence)
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description and use cases
+    validations:
+      required: true
+  - type: textarea
+    id: links
+    attributes:
+      label: Website, logo, API endpoint and documentation
+      description: Provide working public HTTPS URLs. A logo is required for publication.
+    validations:
+      required: true
+  - type: textarea
+    id: networks
+    attributes:
+      label: Networks, tokens, pricing and payment addresses
+      description: Specify Base, BSC or Solana, token contracts/mints and public payTo addresses. XRP is planned.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Payment and ownership evidence
+      description: Link public settlement hashes, published payment requirements and a domain/organization page confirming ownership.
+    validations:
+      required: true
+  - type: textarea
+    id: agent
+    attributes:
+      label: AI agent / MCP / A2A details (if applicable)
+      description: Include input/output schemas, examples and public interface documentation.

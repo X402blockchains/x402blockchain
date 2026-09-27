@@ -1,0 +1,4 @@
+import{test}from'node:test';import assert from'node:assert/strict';import{matchPayment}from'../server/bnb-payment-history.mjs';
+const hash='0x'+'a'.repeat(64),wallet='0x'+'b'.repeat(40),topic='0x'+'0'.repeat(24)+'b'.repeat(40),row={hash,serverAddress:wallet,cryptoCurrency:'USDT',amount:2};
+const receipt={transactionHash:hash,status:'0x1',logs:[{address:'0x55d398326f99059ff775485246999027b3197955',topics:['0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef',topic,topic],data:'0x'+(2n*10n**18n).toString(16),logIndex:'0x1'}]};
+test('matches exact settlement and rejects mismatched or failed payments',()=>{assert.equal(matchPayment(row,receipt).amount,'2000000000000000000');assert.equal(matchPayment({...row,amount:3},receipt),null);assert.equal(matchPayment(row,{...receipt,status:'0x0'}),null);assert.equal(matchPayment(row,{...receipt,logs:[...receipt.logs,...receipt.logs]}),null)});

@@ -1,0 +1,17 @@
+name: Data correction
+description: Report incorrect metadata, attribution or payment data
+title: "[Data] "
+body:
+  - type: textarea
+    id: issue
+    attributes:
+      label: Affected page and expected correction
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Public evidence
+      description: Include network, exact UTC date range, transaction hashes, source links and counting definitions. Do not include secrets.
+    validations:
+      required: true

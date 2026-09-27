@@ -1,0 +1,18 @@
+// Provider-attributed payments; verify settlement independently before publishing.
+const TOKEN='0x55d398326f99059ff775485246999027b3197955',TRANSFER='0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef';
+export function matchPayment(row,receipt){
+ if(!/^0x[\da-f]{64}$/i.test(row.hash)||receipt?.transactionHash?.toLowerCase()!==row.hash.toLowerCase()||receipt.status!=='0x1'||row.cryptoCurrency!=='USDT')return null;
+ const logs=receipt.logs.filter(l=>!l.removed&&l.address.toLowerCase()===TOKEN&&l.topics[0]===TRANSFER&&('0x'+l.topics[2]?.slice(-40)).toLowerCase()===row.serverAddress?.toLowerCase());
+ if(logs.length!==1)return null;const l=logs[0],amount=BigInt(l.data);if(Math.abs(Number(amount)/1e18-Number(row.amount))>0.000001)return null;
+ return{amount:amount.toString(),event:String(parseInt(l.logIndex,16)),payer:'0x'+l.topics[1].slice(-40),payTo:row.serverAddress.toLowerCase()};
+}
+export async function syncBnbPaymentHistory(env){
+ const db=env.DB,key='bnb-payment-history',old=await db.prepare('SELECT payload FROM external_snapshots WHERE source=?').bind(key).first(),state=old?JSON.parse(old.payload):{page:1,end:new Date().toISOString(),start:new Date(Date.now()-30*86400000).toISOString()};
+ const fmt=s=>s.slice(0,19).replace('T',' '),res=await fetch('https://x402-scan-api.aeon.xyz/api/home/transaction/pages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({startTime:fmt(state.start),endTime:fmt(state.end),order:'DESC',pageNo:state.page,pageSize:10,sortKey:'time',timeAttribute:'time'}),signal:AbortSignal.timeout(20000)});
+ if(!res.ok)throw Error('BNB history HTTP '+res.status);const body=await res.json();if(body.code!=='0'||!Array.isArray(body.model?.data))throw Error('Invalid BNB history');let indexed=0;
+ for(const row of body.model.data){if(!/^0x[\da-f]{64}$/i.test(row.hash))throw Error('Invalid payment hash');const response=await fetch(env.BSC_RPC_URL||'https://bsc-dataseed.binance.org',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({jsonrpc:'2.0',id:1,method:'eth_getTransactionReceipt',params:[row.hash]}),signal:AbortSignal.timeout(12000)});const rpc=await response.json();if(rpc.error||!rpc.result)throw Error('BNB receipt unavailable');const receipt=rpc.result,m=matchPayment(row,receipt);if(!m)throw Error('BNB provider payment does not match settlement');const stamp=receipt.logs.find(l=>l.logIndex==='0x'+Number(m.event).toString(16))?.blockTimestamp;if(!stamp)throw Error('BNB receipt timestamp unavailable');
+ await db.batch([db.prepare('INSERT INTO receipts(network,`transaction`,event_id,source,payer,pay_to,asset,amount,decimals,timestamp,status,received_at) VALUES(?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(network,`transaction`,event_id) DO NOTHING').bind('BSC',row.hash,m.event,'bsc-explorer-payment',m.payer,m.payTo,TOKEN,m.amount,18,parseInt(stamp,16)*1000,'settled',Date.now()),db.prepare('INSERT INTO chain_evidence VALUES(?,?,?,?,?,?,?) ON CONFLICT(network,`transaction`,event_id) DO NOTHING').bind('BSC',row.hash,m.event,parseInt(receipt.blockNumber,16),receipt.blockHash,receipt.to,'aeon')]);indexed++;
+ }
+ state.page++;state.total=body.model.sumRow;state.checkedAt=Date.now();if(body.model.lastPage){state.page=1;state.end=new Date().toISOString();state.start=new Date(Date.now()-30*86400000).toISOString()}
+ await db.prepare('INSERT INTO external_snapshots VALUES(?,?,?) ON CONFLICT(source) DO UPDATE SET payload=excluded.payload,checked_at=excluded.checked_at').bind(key,JSON.stringify(state),Date.now()).run();return{indexed,page:state.page,total:state.total};
+}

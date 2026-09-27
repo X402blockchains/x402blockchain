@@ -1,7 +1,5 @@
-# Security
+# Security reporting
 
-Report vulnerabilities privately to the repository owner through GitHub's private vulnerability reporting when enabled, or an established private owner contact. Do not put secrets or exploitable customer data in public issues.
+Do not open a public issue containing credentials, exploitable vulnerability details or private data. Use GitHub's private vulnerability reporting if maintainers have enabled it. Otherwise request a private reporting channel without including sensitive details. No private security contact is configured in this repository yet.
 
-The production API trusts identity headers supplied by Sites. Do not deploy behind an ingress that allows clients to forge those headers. The local preview strips platform identity headers. Keep administrator settings, dedicated RPC credentials and receipt HMAC secrets server-side. Rotate a compromised source key and review its imported receipts.
-
-This explorer does not hold wallet keys or execute payments. Catalog listings and facilitator associations are not security endorsements.
+Never commit seed phrases, private keys, RPC credentials, `.env`, local databases, applicant contacts or submission tokens. Do not send a real payment merely to demonstrate an issue. Maintainers must enable a private reporting channel before public launch.

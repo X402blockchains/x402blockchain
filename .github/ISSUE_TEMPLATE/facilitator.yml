@@ -1,0 +1,48 @@
+name: Facilitator listing
+description: Request review of an x402 payment facilitator
+title: "[Facilitator] "
+body:
+  - type: markdown
+    attributes:
+      value: "Public submissions only. Do not include keys, private contacts or signed authorizations. Listing review does not automatically enable indexing."
+  - type: input
+    id: name
+    attributes:
+      label: Facilitator name
+    validations:
+      required: true
+  - type: textarea
+    id: links
+    attributes:
+      label: Website, logo and documentation
+      description: Provide public HTTPS URLs for all three.
+    validations:
+      required: true
+  - type: textarea
+    id: capabilities
+    attributes:
+      label: Supported networks, versions and schemes
+      description: Include mainnet chain IDs, tokens and public supported/verify/settle endpoint URLs. Do not supply credentials.
+    validations:
+      required: true
+  - type: textarea
+    id: addresses
+    attributes:
+      label: Public signer, relayer and router addresses
+      description: Identify each address role and link its official publication.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Successful settlement evidence
+      description: Provide public transaction hashes with chain, token, amount and seller. Explain attribution and any limitations.
+    validations:
+      required: true
+  - type: textarea
+    id: ownership
+    attributes:
+      label: Ownership evidence
+      description: Link a public domain or organization page confirming your association. Maintainers may request additional proof.
+    validations:
+      required: true

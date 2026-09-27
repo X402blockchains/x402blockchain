@@ -20,3 +20,4 @@
 @keyframes brandFloat{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-3px) rotate(4deg)}}
 .brand:hover svg.x402-logo{animation-play-state:paused}
 @media(prefers-reduced-motion:reduce){.brand svg.x402-logo{animation:none!important;transform:none}}
+.news-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin:25px 0}.news-card{padding:26px;display:flex;flex-direction:column;gap:15px}.news-card h2{font-size:20px;line-height:1.5}.news-card small{color:#2563eb}.news-card .textlink{margin-top:auto}.news-reading{padding:35px;margin:24px 0;line-height:1.9;max-width:850px}.nav-actions>a:not(.primary){font-size:13px;color:#2563eb;white-space:nowrap}@media(max-width:900px){.news-grid{grid-template-columns:1fr}}

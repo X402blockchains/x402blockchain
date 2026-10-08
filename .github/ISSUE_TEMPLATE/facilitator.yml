@@ -1,5 +1,5 @@
-name: Facilitator listing
-description: Request review of an x402 payment facilitator
+name: Apply as a facilitator
+description: List your x402 facilitator on X402blockchains (Base, Solana or BNB Chain)
 title: "[Facilitator] "
 body:
   - type: markdown
@@ -46,3 +46,30 @@ body:
       description: Link a public domain or organization page confirming your association. Maintainers may request additional proof.
     validations:
       required: true
+  - type: textarea
+    id: history
+    attributes:
+      label: Historical indexing information
+      description: For each chain, give the first settlement date (UTC), deployment block or slot if known, token contract/mint and decimals. Explain signer rotations, routers and any public history endpoint. Separate mainnet from testnet.
+    validations:
+      required: true
+  - type: input
+    id: support
+    attributes:
+      label: Public support link
+      description: A public GitHub, Discord, Telegram or support page. Do not post private contact information.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Submission checklist
+      options:
+        - label: I included an official working logo and public ownership evidence.
+          required: true
+        - label: I separated facilitator signers from seller payment recipient addresses.
+          required: true
+        - label: I included successful settlement examples for every requested network.
+          required: true
+        - label: I understand this is a public application requiring review, not automatic listing or a security endorsement.
+          required: true

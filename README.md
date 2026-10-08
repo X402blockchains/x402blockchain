@@ -4,6 +4,25 @@
 
 **X402blockchains** brings payment exploration, project discovery and facilitator information into one place. Browse Base, Solana and BNB Chain, inspect on-chain receipts, and discover APIs and AI agents using x402.
 
+## Apply as a facilitator
+
+**[Apply as a facilitator →](https://github.com/X402blockchains/x402blockchain/issues/new?template=facilitator.yml)**
+
+No coding is required: sign in to GitHub, complete the form and submit your application.
+
+| Prepare | Details |
+|---|---|
+| Identity | Name, official website, logo, documentation and public support link |
+| Capabilities | Base, Solana or BNB Chain; mainnet identifiers; x402 versions and schemes |
+| Endpoints | Public facilitator URL and supported, verify and settle endpoint URLs |
+| Addresses | Signer/relayer and router addresses, clearly separated from seller wallets |
+| Evidence | Successful settlement hashes for each chain and public ownership proof |
+| History | First settlement date in UTC, deployment block/slot, tokens and decimals |
+
+**Review process:** application → maintainer checks → requested corrections → approved integration → indexing and publication. These are manual steps; submitting or merging a proposal does not automatically deploy the website. XRP applications may be discussed as planned support.
+
+Prefer a pull request? Fork this repository, add a Markdown proposal under `listings/proposals/your-facilitator.md` using the fields above, then open a PR and link any existing application. Use an official logo URL or include a logo you have permission to submit. Never include API keys, private keys or signed payment authorizations.
+
 ## Project status
 
 The live website uses a React frontend, Node.js API, SQLite storage and scheduled collectors. The repository also retains the earlier Worker implementation. Changes pushed to GitHub are not automatically deployed.

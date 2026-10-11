@@ -1,6 +1,6 @@
 # Listing AI agents, projects and facilitators
 
-The working local application is at http://127.0.0.1:4174/#apply. The full interactive documentation is at http://127.0.0.1:4174/#docs. Submissions currently stay on this computer.
+Use the listing issue forms in this repository, or the [website](https://x402blockchains.com) application form when the corresponding deployment supports it. Hosted form submissions are stored privately for manual review. In local development, the application form is at http://127.0.0.1:4174/#apply and documentation is at http://127.0.0.1:4174/#docs; local submissions stay in the local database.
 
 ## Listing types
 
@@ -26,7 +26,16 @@ The API rejects incomplete submissions. A supplied logo URL is not yet proof the
 
 ## GitHub route
 
-A listing issue template is prepared at `.github/ISSUE_TEMPLATE/listing.yml`. It becomes available only after the repository changes are published. Public issues may include public metadata and evidence; private contacts should use the website form. Issues and pull requests are reviewed manually and are not automatically imported or approved.
+Open the [listing forms](https://github.com/X402blockchains/x402blockchain/issues/new/choose) and choose Project / AI agent listing or Facilitator listing. Public issues may include public metadata and evidence; private contacts should use the website form. Issues and pull requests are reviewed manually and are not automatically imported or approved.
+
+## Before submitting
+
+- Open your website, logo and documentation links without signing in to confirm they are publicly accessible.
+- List only supported networks, with mainnet identifiers and token contracts for each.
+- For facilitators, include supported, verify and settle endpoint URLs and explain any authentication requirements without sharing credentials.
+- Include successful settlement hashes with the chain and public explorer links; separate facilitator signer/relayer addresses from seller wallets.
+- Link an existing application when submitting corrections so reviewers can follow the same request.
+- Check public attachments for secrets, private contact details and signed payment authorizations before posting.
 
 ## Metadata updates and corrections
 

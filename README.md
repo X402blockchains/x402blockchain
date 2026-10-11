@@ -21,7 +21,7 @@ No coding is required: sign in to GitHub, complete the form and submit your appl
 
 **Review process:** application → maintainer checks → requested corrections → approved integration → indexing and publication. These are manual steps; submitting or merging a proposal does not automatically deploy the website. XRP applications may be discussed as planned support.
 
-Prefer a pull request? Fork this repository, add a Markdown proposal under `listings/proposals/your-facilitator.md` using the fields above, then open a PR and link any existing application. Use an official logo URL or include a logo you have permission to submit. Never include API keys, private keys or signed payment authorizations.
+Prefer a pull request? Fork this repository, add a JSON proposal under `listings/proposals/your-facilitator.json` following the [proposal example](listings/proposals/README.md), then open a PR and link any existing application. Use an official logo URL or include a logo you have permission to submit. Never include API keys, private keys or signed payment authorizations.
 
 ## Project status
 

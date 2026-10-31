@@ -1,6 +1,6 @@
 # Contributing to X402blockchains
 
-Use this repository for public project metadata, documentation corrections, branding updates and frontend examples. The production platform implementation is not part of this public repository.
+Use this repository for public project metadata, documentation corrections, branding updates and the static showcase example. The production platform implementation is not part of this public repository.
 
 For a listing, use the [registry](https://github.com/X402blockchains/x402-registry) or a listing issue form. Include public ownership and payment/delivery evidence and link any earlier application. Keep credentials, private contact details and signed payment authorizations out of GitHub.
 

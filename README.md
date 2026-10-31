@@ -5,7 +5,7 @@
 
 Discover x402 projects, AI agents, apps and facilitators across Base, Solana and BNB Chain. Explore project profiles and payment activity on the website.
 
-This public repository contains community resources and selected frontend material. The production backend, data collection implementation, schemas and operational configuration are not distributed here. Older frontend/build files are retained for reference and do not constitute a complete runnable platform.
+This is the **public community and showcase repository**, not the platform's full source. It contains public listing guides, approved metadata, articles, branding and a small static frontend example. Backend implementation and operational configuration are not distributed here.
 
 ## Submit your project
 
@@ -23,6 +23,6 @@ Provide an official website, working logo, documentation, public support, owners
 | Listing metadata and proposals | [listings/](listings/) |
 | Articles | [news/](news/) |
 | Brand assets | [branding/](branding/) |
-| Public frontend material | [public-website/](public-website/) |
+| Static project card example | [public-website/](public-website/) |
 
 See [Contributing](CONTRIBUTING.md) and [Security](SECURITY.md). Public visibility does not grant a new open-source licence; existing notices and applicable rights remain in place.

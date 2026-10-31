@@ -1,106 +1,28 @@
-<p align="center"><img src="branding/github-header.svg" width="100%" alt="X402blockchains — Explore the programmable payment economy"></p>
-<p align="center"><a href="https://x402blockchains.com">Explore the website</a> · <a href="https://x.com/x402blockchains">Follow on X</a> · <a href="docs/LISTING-GUIDE.md">List your project</a> · <a href="CONTRIBUTING.md">Contribute</a></p>
-<p align="center"><img alt="React frontend" src="https://img.shields.io/badge/React-frontend-2563eb?style=flat-square"> <img alt="Node.js 24" src="https://img.shields.io/badge/Node.js-24-15803d?style=flat-square"> <img alt="SQLite storage" src="https://img.shields.io/badge/SQLite-persistent%20storage-475569?style=flat-square"></p>
+<p align="center"><img src="branding/github-header.svg" width="100%" alt="X402blockchains"></p>
+<p align="center"><a href="https://x402blockchains.com/">Website</a> · <a href="https://x402blockchains.com/ai-agents-apps/">AI Agents & Apps</a> · <a href="https://x402blockchains.com/articles/">Articles</a> · <a href="https://x.com/x402blockchains">X</a></p>
 
-**X402blockchains** brings payment exploration, project discovery and facilitator information into one place. Browse Base, Solana and BNB Chain, inspect on-chain receipts, and discover APIs and AI agents using x402.
+# X402blockchains
 
-## AI Agents & Apps and articles
+Discover x402 projects, AI agents, apps and facilitators across Base, Solana and BNB Chain. Explore project profiles and payment activity on the website.
 
-Explore the [AI Agents & Apps directory](https://x402blockchains.com/ai-agents-apps/), [articles](https://x402blockchains.com/articles/) and [new reviewed listings](https://x402blockchains.com/#new-reviewed-listings).
+This public repository contains community resources and selected frontend material. The production backend, data collection implementation, schemas and operational configuration are not distributed here. Older frontend/build files are retained for reference and do not constitute a complete runnable platform.
 
-[`public-website/`](public-website/README.md) contains selected public-facing directory views, styles, project cards and advertisement rotation code. Administrative tools and backend configuration are not part of this export.
+## Submit your project
 
-## Apply as a facilitator
+- [Apply through the public registry](https://github.com/X402blockchains/x402-registry)
+- [Open a project or facilitator application](https://github.com/X402blockchains/x402blockchain/issues/new/choose)
+- [Read the listing guide](docs/LISTING-GUIDE.md)
 
-**[Apply as a facilitator →](https://github.com/X402blockchains/x402blockchain/issues/new?template=facilitator.yml)**
+Provide an official website, working logo, documentation, public support, ownership evidence and supported payment networks. Paid services should include a successful transaction and matching delivery evidence. Never post credentials or usable payment authorizations. Approval and website publication are separate; listing is not a security audit or a guarantee of performance.
 
-No coding is required: sign in to GitHub, complete the form and submit your application.
+## Public resources
 
-| Prepare | Details |
+| Resource | Location |
 |---|---|
-| Identity | Name, official website, logo, documentation and public support link |
-| Capabilities | Base, Solana or BNB Chain; mainnet identifiers; x402 versions and schemes |
-| Endpoints | Public facilitator URL and supported, verify and settle endpoint URLs |
-| Addresses | Signer/relayer and router addresses, clearly separated from seller wallets |
-| Evidence | Successful settlement hashes for each chain and public ownership proof |
-| History | First settlement date in UTC, deployment block/slot, tokens and decimals |
+| Public facilitator information | [facilitators/](facilitators/) |
+| Listing metadata and proposals | [listings/](listings/) |
+| Articles | [news/](news/) |
+| Brand assets | [branding/](branding/) |
+| Public frontend material | [public-website/](public-website/) |
 
-**Review process:** application → maintainer checks → requested corrections → approved integration → indexing and publication. These are manual steps; submitting or merging a proposal does not automatically deploy the website. XRP applications may be discussed as planned support.
-
-Prefer a pull request? Fork this repository, add a JSON proposal under `listings/proposals/your-facilitator.json` following the [proposal example](listings/proposals/README.md), then open a PR and link any existing application. Use an official logo URL or include a logo you have permission to submit. Never include API keys, private keys or signed payment authorizations.
-
-## Project status
-
-The live website uses a React frontend, Node.js API, SQLite storage and scheduled collectors. The repository also retains the earlier Worker implementation. Changes pushed to GitHub are not automatically deployed.
-
-Collection runs every five minutes on the current host. The interface refreshes every 30 seconds, aggregate feeds are cached for 15 minutes, and news feeds refresh hourly. Provider availability and rate limits can delay updates.
-
-Base, Solana and BNB collection is implemented with **partial historical coverage**. XRP is planned. Public aggregate statistics and individually collected transaction records are separate datasets. Matching a transfer on-chain does not by itself prove an HTTP x402 exchange. Source evidence and collection status are available through the Coverage page and API.
-
-## Features
-
-- Mixed-chain transaction browsing, per-chain filters, wallet links and pagination.
-- Project/API and facilitator directories, logos and detail pages.
-- Transactions and volume charts with separate network scales.
-- Provider aggregate feeds refreshed independently from receipt indexing.
-- Project, AI agent and facilitator applications with manual review.
-- Exact token amounts, deduplication, evidence records and resumable collection.
-
-X Pay can appear as both a seller and facilitator. These roles are attributed separately. The mixed homepage features X Pay-attributed settlements; individual chain tabs use latest-first ordering.
-
-## Run locally
-
-Use Node.js 24+ and pnpm. From the repository root:
-
-```sh
-pnpm install
-pnpm --dir design install
-node scripts/start-local.mjs
-```
-
-Open http://127.0.0.1:4174/#home. This command builds the React app and starts the local server and collector. Keep it running for automatic updates. Stop with Ctrl+C. SQLite data lives in `.local/development.sqlite`; never commit it. Public RPC limits can slow or stop historical collection. The collector records errors instead of inventing missing data.
-
-```sh
-node design/build.mjs
-node --test tests/*.test.mjs
-```
-
-## List your project or facilitator
-
-Open a **Project / AI agent listing** or **Facilitator listing** issue in this repository, or use the website application form when the corresponding deployment supports it. The hosted form stores applications privately for manual operator review. Local development stores applications only in its local database.
-
-Provide public metadata, a logo, documentation, chain identifiers and payment evidence. A facilitator must also provide supported versions/schemes and public settlement addresses. Never post secrets or private contact information in an issue. GitHub issues and pull requests are manually reviewed; they do not automatically publish a listing or start indexing.
-
-See the [listing guide](docs/LISTING-GUIDE.md) for the complete process and [contribution guide](CONTRIBUTING.md) for forking and pull requests.
-
-## Repository map
-
-| Directory | Purpose |
-|---|---|
-| `design/src/` | React pages, charts, forms and navigation |
-| `server/` | Public APIs, source adapters and payment verification |
-| `scripts/` | Local startup, collection and production server |
-| `drizzle/` | Database migrations |
-| `tests/` | Data integrity, API and access checks |
-| `listings/proposals/` | Example listing proposals for pull requests |
-| `docs/` | Setup, methodology and contribution guides |
-
-## Documentation
-
-| Guide | Contents |
-|---|---|
-| [Documentation index](docs/README.md) | Navigation and current implementation status |
-| [Listing guide](docs/LISTING-GUIDE.md) | Eligibility, fields, review and corrections |
-| [Local backend](LOCAL-BACKEND.md) | Endpoints, filters, applications and operation |
-| [Architecture](docs/ARCHITECTURE.md) | Frontend, API, persistence and collectors |
-| [Data methodology](docs/DATA-METHODOLOGY.md) | Attribution, units, source coverage and limitations |
-| [News and articles](docs/NEWS.md) | Automatic feeds, optional X providers and local editing |
-| [Hosting](docs/PRODUCTION-HOSTING.md) | Production runtime, schedule and operational limits |
-| [Source audit](docs/SOURCE-AUDIT.md) | Research and verification findings |
-| [Contributing](CONTRIBUTING.md) | Fork, run, test and submit changes |
-| [Security](SECURITY.md) | Sensitive reports and secret handling |
-| [Release checklist](docs/PUBLIC-RELEASE.md) | Public repository and deployment preparation |
-
-## Licensing
-
-See existing license files, if present, and dependency licenses. No new open-source license is granted by this README. Public visibility and GitHub's fork feature are not a substitute for a license granting redistribution rights. Maintainers must choose a license before advertising unrestricted reuse.
+See [Contributing](CONTRIBUTING.md) and [Security](SECURITY.md). Public visibility does not grant a new open-source licence; existing notices and applicable rights remain in place.

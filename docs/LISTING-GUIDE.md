@@ -1,52 +1,19 @@
-# Listing AI agents, projects and facilitators
+# Listing AI agents, apps and facilitators
 
-Use the listing issue forms in this repository, or the [website](https://x402blockchains.com) application form when the corresponding deployment supports it. Hosted form submissions are stored privately for manual review. In local development, the application form is at http://127.0.0.1:4174/#apply and documentation is at http://127.0.0.1:4174/#docs; local submissions stay in the local database.
+Apply through the [public registry](https://github.com/X402blockchains/x402-registry), the website submission form, or a listing issue in this repository. Link your existing application when supplying corrections rather than opening duplicates.
 
-## Listing types
+## Required public details
 
-- **AI agent:** describe capabilities, input/output schemas, examples, pricing, underlying paid endpoint and any A2A/MCP interface.
-- **Project / API:** describe the service, paid resource URLs and HTTP methods, public documentation and supported payment networks.
-- **Facilitator:** publish supported x402 versions/schemes, mainnet chain IDs, token contracts, signer/relayer/router addresses and successful settlement hashes.
-- **Project and facilitator:** supply both sets of evidence. Project sales and facilitator settlements are measured separately.
+- Project name, clear description, official HTTPS website and working logo.
+- Documentation, public support link and verifiable ownership reference.
+- Supported mainnets, chain identifiers, token contracts/mints and decimals.
+- For paid APIs: resource URL, HTTP method, price, facilitator and successful settlement with matching redacted delivery evidence.
+- For facilitators: supported x402 versions and schemes, public supported/verify/settle endpoints, authentication requirements and public signer/relayer addresses, separated from seller recipients.
 
-## Required fields
+Do not include private contacts, credentials or usable signed payment authorizations. Label operator tests honestly. A seller transfer alone does not establish facilitator attribution.
 
-Name, description (20+ characters), HTTPS website, working HTTPS logo URL, public endpoint, documentation, private contact email, listing type and at least one supported network (Base, BSC or Solana). XRP is deferred. Do not submit private keys, seed phrases, signed payment authorizations or API secrets.
+## Review
 
-The API rejects incomplete submissions. A supplied logo URL is not yet proof the image is available; the reviewer checks it before publication. The site hides missing-logo listings. No local listing fee is charged.
+Maintainers check the submitted public details, request missing evidence and record the reviewed scope. Approval is distinct from website publication and activity visibility. No submission guarantees an audit badge, transaction volume, placement or review deadline.
 
-## Submission and review
-
-1. Submit the website form, or call POST `/api/live/applications` from the same local origin.
-2. Save the returned ID and secret receipt token. Only its hash is stored. Contact details are not returned in public listings.
-3. Status is checked with GET `/api/live/applications?id=ID` and `Authorization: Bearer TOKEN`.
-4. Operator reviews ownership, payment requirements, logos, endpoint documentation, supported mainnets and successful settlement evidence. Domain-hosted proof or a purpose-specific wallet signature can be requested manually. Automatic ownership verification is not implemented.
-5. Operator records `approved`, `needs_information` or `rejected` with a review note using `scripts/review-local-listing.mjs`.
-6. Approved listings appear in discovery. New facilitator indexing still requires a tested adapter or supported receipt pipeline. Approval never creates transaction volume or an audit badge.
-
-## GitHub route
-
-Open the [listing forms](https://github.com/X402blockchains/x402blockchain/issues/new/choose) and choose Project / AI agent listing or Facilitator listing. Public issues may include public metadata and evidence; private contacts should use the website form. Issues and pull requests are reviewed manually and are not automatically imported or approved.
-
-## Before submitting
-
-- Open your website, logo and documentation links without signing in to confirm they are publicly accessible.
-- List only supported networks, with mainnet identifiers and token contracts for each.
-- For facilitators, include supported, verify and settle endpoint URLs and explain any authentication requirements without sharing credentials.
-- Include successful settlement hashes with the chain and public explorer links; separate facilitator signer/relayer addresses from seller wallets.
-- Link an existing application when submitting corrections so reviewers can follow the same request.
-- Check public attachments for secrets, private contact details and signed payment authorizations before posting.
-
-## Metadata updates and corrections
-
-Submit a new application referencing the original listing URL and explain the change. Include public evidence, affected wallets and transaction hashes where applicable. A changed logo, recipient wallet or facilitator signer must be reviewed before attribution changes. Reports of inaccurate data should include chain, exact UTC time range and transaction hashes—not only rounded totals.
-
-## API and operation
-
-See `LOCAL-BACKEND.md` for routes, query filters, exact token units, local startup, review command and coverage limitations. See `SOURCE-AUDIT.md` for comparison findings and source provenance.
-
-## Fork and pull-request listing route
-
-Fork the public repository, create a branch, and add a public metadata proposal under `listings/proposals/`. Follow its README example. Open a pull request and link your listing issue. A maintainer checks the evidence, requests corrections and manually registers approved metadata. No GitHub automation currently imports applications. Facilitator ingestion is activated only after its address mapping or adapter is validated. There is no guaranteed review deadline or automatic verified badge.
-
-Separate GitHub forms cover Project / AI agent listing, Facilitator listing and Data correction. For security vulnerabilities use the private reporting process in SECURITY.md, not these forms.
+For metadata corrections, provide the listing URL, the changed field and supporting public evidence. Data corrections should include the network, transaction hash and UTC period.

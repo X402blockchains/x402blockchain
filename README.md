@@ -4,6 +4,12 @@
 
 **X402blockchains** brings payment exploration, project discovery and facilitator information into one place. Browse Base, Solana and BNB Chain, inspect on-chain receipts, and discover APIs and AI agents using x402.
 
+## AI Agents & Apps and articles
+
+Explore the [AI Agents & Apps directory](https://x402blockchains.com/ai-agents-apps/), [articles](https://x402blockchains.com/articles/) and [new reviewed listings](https://x402blockchains.com/#new-reviewed-listings).
+
+[`public-website/`](public-website/README.md) contains selected public-facing directory views, styles, project cards and advertisement rotation code. Administrative tools and backend configuration are not part of this export.
+
 ## Apply as a facilitator
 
 **[Apply as a facilitator →](https://github.com/X402blockchains/x402blockchain/issues/new?template=facilitator.yml)**

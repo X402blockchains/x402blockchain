@@ -1,0 +1,14 @@
+(()=>{'use strict';
+if(window.__featuredPagination)return;window.__featuredPagination=true;
+let page=new URL(location.href).searchParams.get('services-page')==='2'?2:1,queued=false;
+const style=document.createElement('style');style.textContent='#featured-services tr.fs-page-hidden{display:none!important}.fs-pagination{display:flex;align-items:center;justify-content:center;gap:10px;padding:20px 12px;flex-wrap:wrap}.fs-pagination a{display:inline-flex;align-items:center;justify-content:center;min-width:40px;height:40px;padding:0 12px;border:1px solid #dbe3ef;border-radius:10px;color:#334155;background:#fff;text-decoration:none;font:600 14px Inter,sans-serif}.fs-pagination a[aria-current="page"]{background:#2563eb;border-color:#2563eb;color:#fff}.fs-pagination a:hover{border-color:#2563eb}.fs-pagination a:focus-visible{outline:3px solid #93c5fd;outline-offset:3px}.fs-pagination__label{color:#64748b;font:13px Inter,sans-serif;margin-right:8px}';document.head.append(style);
+function url(p){const u=new URL(location.href);if(p===1)u.searchParams.delete('services-page');else u.searchParams.set('services-page','2');u.hash='featured-services';return u.pathname+u.search+u.hash;}
+function render(){const section=document.getElementById('featured-services'),body=section?.querySelector('tbody');if(!body)return;
+const rows=[...body.children].filter(r=>r.tagName==='TR'),start=rows.findIndex(r=>r.id==='tanod-featured-row');if(start<0)return;
+rows.forEach((r,i)=>{const hidden=page===1?i>=start:i<start;if(r.classList.contains('fs-page-hidden')!==hidden)r.classList.toggle('fs-page-hidden',hidden)});
+let nav=section.querySelector('.fs-pagination');if(!nav){nav=document.createElement('nav');nav.className='fs-pagination';nav.setAttribute('aria-label','Featured services pages');nav.innerHTML='<span class="fs-pagination__label">Projects</span><a data-services-page="1">1</a><a data-services-page="2">2</a>';section.append(nav);nav.addEventListener('click',e=>{const link=e.target.closest('a[data-services-page]');if(!link||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;e.preventDefault();page=Number(link.dataset.servicesPage);history.pushState(null,'',url(page));render();section.scrollIntoView({block:'start',behavior:'auto'});link.focus({preventScroll:true})});}
+for(const a of nav.querySelectorAll('a')){const p=Number(a.dataset.servicesPage),href=url(p);if(a.getAttribute('href')!==href)a.setAttribute('href',href);if(p===page){if(a.getAttribute('aria-current')!=='page')a.setAttribute('aria-current','page')}else if(a.hasAttribute('aria-current'))a.removeAttribute('aria-current');a.setAttribute('aria-label','Project page '+p);}
+}
+function schedule(){if(queued)return;queued=true;requestAnimationFrame(()=>{queued=false;render()})}
+new MutationObserver(schedule).observe(document.body,{childList:true,subtree:true});addEventListener('popstate',()=>{page=new URL(location.href).searchParams.get('services-page')==='2'?2:1;render()});render();
+})();

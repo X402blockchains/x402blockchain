@@ -1,0 +1,64 @@
+{
+  "name": "AgentKit Data",
+  "role": "API / developer resource",
+  "website": "https://x402-apis-production.up.railway.app",
+  "logo": null,
+  "description": "Web-to-Markdown, token-check and wallet-data APIs.",
+  "docs": "https://x402-apis-production.up.railway.app/openapi.json",
+  "endpoint": "https://x402-apis-production.up.railway.app",
+  "networks": [
+    "Base"
+  ],
+  "paymentAddresses": [
+    {
+      "network": "Base",
+      "address": "0xd9784f8122af988e51b3183f725b0b53bcb8278a"
+    }
+  ],
+  "settlementExamples": [
+    {
+      "network": "Base",
+      "token": "USDC",
+      "amount": 0.001,
+      "transaction": "0xe4820a7a4c324599976bbb1876c93a6883472f6abfbb65a9eda00bce2d353772",
+      "explorer": "https://basescan.org/tx/0xe4820a7a4c324599976bbb1876c93a6883472f6abfbb65a9eda00bce2d353772",
+      "receiptStatus": "success",
+      "recipientAmountMatched": true,
+      "operatorSelfPayment": false,
+      "customerIdentityVerified": false
+    }
+  ],
+  "supportedVersions": [
+    2
+  ],
+  "supportedSchemes": [
+    "exact"
+  ],
+  "approval": {
+    "status": "approved_basic_directory",
+    "by": "X402blockchains",
+    "date": "2026-11-27",
+    "decisionUrl": "https://github.com/X402blockchains/x402-registry/pull/31#pullrequestreview-6077255408",
+    "submissionUrl": "https://github.com/X402blockchains/x402-registry/pull/31",
+    "submissionHead": "5566ca554a65dc9c8b35dcd1a1a7578cb1721403",
+    "scope": "Basic directory inclusion with checked Base USDC payment evidence. No broader verification badge."
+  },
+  "x402scan": {
+    "profile": "https://www.x402scan.com/server/a8b15e55-674d-4516-ab1e-3948ff3b7775",
+    "origin": "https://x402-apis-production.up.railway.app",
+    "past30DayTransactionsAtReview": 5,
+    "source": "x402scan recipient-based index; not API request counts or verified customer counts."
+  },
+  "publication": {
+    "batch": 3,
+    "status": "prepared_not_published",
+    "date": null,
+    "prePublicationChecks": [
+      "Check the canonical website and current unpaid payment terms before publication.",
+      "Confirm the official logo asset and its display.",
+      "Keep Basic listing distinct from route-delivery, security or facilitator verification.",
+      "Obtain or confirm the official logo; no placeholder logo is supplied.",
+      "Confirm the current paid route recipient against the payment challenge; the discovery document did not contain the indexed recipient."
+    ]
+  }
+}

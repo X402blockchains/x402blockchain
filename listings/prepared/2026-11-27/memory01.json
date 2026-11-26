@@ -1,0 +1,62 @@
+{
+  "name": "Memory01",
+  "role": "API / developer resource",
+  "website": "https://memory.node01.org/",
+  "logo": "https://memory.node01.org/favicon.ico",
+  "description": "Persistent memory storage and search for AI agents.",
+  "docs": "https://memory.node01.org/llms.txt",
+  "endpoint": "https://memory.node01.org",
+  "networks": [
+    "Base"
+  ],
+  "paymentAddresses": [
+    {
+      "network": "Base",
+      "address": "0xe9a827d9453e9b18040c25bb492a568ddd827549"
+    }
+  ],
+  "settlementExamples": [
+    {
+      "network": "Base",
+      "token": "USDC",
+      "amount": 0.01,
+      "transaction": "0x53152ba5fdb55ec8c77097dc8a65bb676b8ab3e16ddf1f86bf0b30e3db386bee",
+      "explorer": "https://basescan.org/tx/0x53152ba5fdb55ec8c77097dc8a65bb676b8ab3e16ddf1f86bf0b30e3db386bee",
+      "receiptStatus": "success",
+      "recipientAmountMatched": true,
+      "operatorSelfPayment": true,
+      "customerIdentityVerified": false
+    }
+  ],
+  "supportedVersions": [
+    2
+  ],
+  "supportedSchemes": [
+    "exact"
+  ],
+  "approval": {
+    "status": "approved_basic_directory",
+    "by": "X402blockchains",
+    "date": "2026-11-27",
+    "decisionUrl": "https://github.com/X402blockchains/x402-registry/pull/54#pullrequestreview-6077245035",
+    "submissionUrl": "https://github.com/X402blockchains/x402-registry/pull/54",
+    "submissionHead": "58419ea210526fa7ebe826cd251115878674c6e5",
+    "scope": "Basic directory inclusion with checked Base USDC payment evidence. No broader verification badge."
+  },
+  "x402scan": {
+    "profile": "https://www.x402scan.com/server/eb0ca4e3-4f4b-4912-ab75-a8f26fa61416",
+    "origin": "https://memory.node01.org",
+    "past30DayTransactionsAtReview": 32,
+    "source": "x402scan recipient-based index; not API request counts or verified customer counts."
+  },
+  "publication": {
+    "batch": 1,
+    "status": "prepared_not_published",
+    "date": null,
+    "prePublicationChecks": [
+      "Check the canonical website and current unpaid payment terms before publication.",
+      "Confirm the official logo asset and its display.",
+      "Keep Basic listing distinct from route-delivery, security or facilitator verification."
+    ]
+  }
+}

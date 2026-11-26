@@ -1,0 +1,62 @@
+{
+  "name": "Pharos Atlas",
+  "role": "API / developer resource",
+  "website": "https://pharosatlas.com",
+  "logo": "https://pharosatlas.com/brand/pharos-mark.png",
+  "description": "Structured trade information and specialist-source APIs.",
+  "docs": "https://pharosatlas.info/network",
+  "endpoint": "https://billing.pharosatlas.com",
+  "networks": [
+    "Base"
+  ],
+  "paymentAddresses": [
+    {
+      "network": "Base",
+      "address": "0x6ac716842c089aaeec8b3041f8096e0823254a84"
+    }
+  ],
+  "settlementExamples": [
+    {
+      "network": "Base",
+      "token": "USDC",
+      "amount": 0.01,
+      "transaction": "0xe8a84767602b2c3f5c9c7e31ea2792fe7a9a3a413e63a79119491a20cb925db2",
+      "explorer": "https://basescan.org/tx/0xe8a84767602b2c3f5c9c7e31ea2792fe7a9a3a413e63a79119491a20cb925db2",
+      "receiptStatus": "success",
+      "recipientAmountMatched": true,
+      "operatorSelfPayment": false,
+      "customerIdentityVerified": false
+    }
+  ],
+  "supportedVersions": [
+    2
+  ],
+  "supportedSchemes": [
+    "exact"
+  ],
+  "approval": {
+    "status": "approved_basic_directory",
+    "by": "X402blockchains",
+    "date": "2026-11-27",
+    "decisionUrl": "https://github.com/X402blockchains/x402-registry/pull/27#pullrequestreview-6077256576",
+    "submissionUrl": "https://github.com/X402blockchains/x402-registry/pull/27",
+    "submissionHead": "ba6add4d7bbaf0326ac26e1edf487830a063435f",
+    "scope": "Basic directory inclusion with checked Base USDC payment evidence. No broader verification badge."
+  },
+  "x402scan": {
+    "profile": "https://www.x402scan.com/server/f69ee517-2af3-4387-8f87-c007f8c7f423",
+    "origin": "https://billing.pharosatlas.com",
+    "past30DayTransactionsAtReview": 37,
+    "source": "x402scan recipient-based index; not API request counts or verified customer counts."
+  },
+  "publication": {
+    "batch": 2,
+    "status": "prepared_not_published",
+    "date": null,
+    "prePublicationChecks": [
+      "Check the canonical website and current unpaid payment terms before publication.",
+      "Confirm the official logo asset and its display.",
+      "Keep Basic listing distinct from route-delivery, security or facilitator verification."
+    ]
+  }
+}

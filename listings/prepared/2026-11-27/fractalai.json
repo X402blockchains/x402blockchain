@@ -1,0 +1,60 @@
+{
+  "name": "FractalAI",
+  "role": "API / developer resource",
+  "website": "https://fractalai.net.co",
+  "logo": null,
+  "description": "Developer APIs and receipt-related resources with x402 payments.",
+  "docs": null,
+  "endpoint": "https://fractalai.net.co",
+  "networks": [
+    "Base"
+  ],
+  "paymentAddresses": [
+    {
+      "network": "Base",
+      "address": "0xc13789e82661635d9cea38a53a0390cf9939ef4f"
+    }
+  ],
+  "settlementExamples": [
+    {
+      "network": "Base",
+      "token": "USDC",
+      "amount": 0.05,
+      "transaction": "0x40718b38e5e657b1b557f969e9dd3d6b6496b4f97515957fdc9eb7fae73748ca",
+      "explorer": "https://basescan.org/tx/0x40718b38e5e657b1b557f969e9dd3d6b6496b4f97515957fdc9eb7fae73748ca",
+      "receiptStatus": "success",
+      "recipientAmountMatched": true,
+      "operatorSelfPayment": false,
+      "customerIdentityVerified": false
+    }
+  ],
+  "supportedVersions": [],
+  "supportedSchemes": [],
+  "approval": {
+    "status": "approved_basic_directory",
+    "by": "X402blockchains",
+    "date": "2026-11-27",
+    "decisionUrl": "https://github.com/X402blockchains/awesome-x402/pull/3#pullrequestreview-6077266280",
+    "submissionUrl": "https://github.com/X402blockchains/awesome-x402/pull/3",
+    "submissionHead": "93a583001cdfa9ab0f2a3b55a4c3e2c01498bf8f",
+    "scope": "Basic directory inclusion with checked Base USDC payment evidence. No broader verification badge."
+  },
+  "x402scan": {
+    "profile": "https://www.x402scan.com/server/c014e3f5-376f-4825-ba48-ef66b9f9d7d0",
+    "origin": "https://fractalai.net.co",
+    "past30DayTransactionsAtReview": 34,
+    "source": "x402scan recipient-based index; not API request counts or verified customer counts."
+  },
+  "publication": {
+    "batch": 1,
+    "status": "prepared_not_published",
+    "date": null,
+    "prePublicationChecks": [
+      "Check the canonical website and current unpaid payment terms before publication.",
+      "Confirm the official logo asset and its display.",
+      "Keep Basic listing distinct from route-delivery, security or facilitator verification.",
+      "Obtain or confirm the official logo; no placeholder logo is supplied.",
+      "Do not describe inclusion as validation of post-quantum or cryptographic-security claims."
+    ]
+  }
+}

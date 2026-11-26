@@ -1,0 +1,62 @@
+{
+  "name": "Trading Signals Toolkit",
+  "role": "API / developer resource",
+  "website": "https://signals.incomefather.com",
+  "logo": "https://signals.incomefather.com/favicon-32.png",
+  "description": "Crypto market-data and token-check APIs for agents and developers.",
+  "docs": "https://signals.incomefather.com/llms.txt",
+  "endpoint": "https://signals.incomefather.com",
+  "networks": [
+    "Base"
+  ],
+  "paymentAddresses": [
+    {
+      "network": "Base",
+      "address": "0x6d7be981c103ed360874a7703ad3cd6a98929afb"
+    }
+  ],
+  "settlementExamples": [
+    {
+      "network": "Base",
+      "token": "USDC",
+      "amount": 0.01,
+      "transaction": "0x0000e05cb47a686419c1280178287cb83a9f3184b90da83f636bd38f816119b0",
+      "explorer": "https://basescan.org/tx/0x0000e05cb47a686419c1280178287cb83a9f3184b90da83f636bd38f816119b0",
+      "receiptStatus": "success",
+      "recipientAmountMatched": true,
+      "operatorSelfPayment": false,
+      "customerIdentityVerified": false
+    }
+  ],
+  "supportedVersions": [
+    2
+  ],
+  "supportedSchemes": [
+    "exact"
+  ],
+  "approval": {
+    "status": "approved_basic_directory",
+    "by": "X402blockchains",
+    "date": "2026-11-27",
+    "decisionUrl": "https://github.com/X402blockchains/x402-registry/pull/42#pullrequestreview-6077251576",
+    "submissionUrl": "https://github.com/X402blockchains/x402-registry/pull/42",
+    "submissionHead": "1b96878757e218e3ad2c33128811b665fd261185",
+    "scope": "Basic directory inclusion with checked Base USDC payment evidence. No broader verification badge."
+  },
+  "x402scan": {
+    "profile": "https://www.x402scan.com/server/3dfb6f29-04e3-41c1-ade5-dcfb8a03bca2",
+    "origin": "https://signals.incomefather.com",
+    "past30DayTransactionsAtReview": 70,
+    "source": "x402scan recipient-based index; not API request counts or verified customer counts."
+  },
+  "publication": {
+    "batch": 2,
+    "status": "prepared_not_published",
+    "date": null,
+    "prePublicationChecks": [
+      "Check the canonical website and current unpaid payment terms before publication.",
+      "Confirm the official logo asset and its display.",
+      "Keep Basic listing distinct from route-delivery, security or facilitator verification."
+    ]
+  }
+}

@@ -3,6 +3,8 @@
 
 # X402blockchains
 
+[![Listing metadata checks](https://github.com/X402blockchains/x402blockchain/actions/workflows/listing-metadata.yml/badge.svg)](https://github.com/X402blockchains/x402blockchain/actions/workflows/listing-metadata.yml)
+
 Discover x402 projects, AI agents, apps and facilitators across Base, Solana and BNB Chain. Explore project profiles and payment activity on the website.
 
 This is the **public community and showcase repository**, not the platform's full source. It contains public listing guides, approved metadata, articles, branding and a small static frontend example. Backend implementation and operational configuration are not distributed here.
@@ -15,6 +17,12 @@ This is the **public community and showcase repository**, not the platform's ful
 
 Provide an official website, working logo, documentation, public support, ownership evidence and supported payment networks. Paid services should include a successful transaction and matching delivery evidence. Never post credentials or usable payment authorizations. Approval and website publication are separate; listing is not a security audit or a guarantee of performance.
 
+## Approved listing queue
+
+The [publication preparation queue](listings/prepared/2026-11-27/PUBLICATION_QUEUE.md) links 19 recorded basic directory approvals and their payment evidence. The proposed batches contain 5, 5, 5 and 4 projects. Final branding and route checks precede each publication; dates are not scheduled.
+
+Each [project record](listings/prepared/2026-11-27/manifest.json) keeps its approval scope, x402scan profile, sampled receipt and outstanding publication checks together. The metadata checks validate record consistency; they do not certify service delivery or publish listings.
+
 ## Public resources
 
 | Resource | Location |
@@ -26,3 +34,4 @@ Provide an official website, working logo, documentation, public support, owners
 | Static project card example | [public-website/](public-website/) |
 
 See [Contributing](CONTRIBUTING.md) and [Security](SECURITY.md). Public visibility does not grant a new open-source licence; existing notices and applicable rights remain in place.
+

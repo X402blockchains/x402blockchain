@@ -1,0 +1,59 @@
+{
+  "name": "Cian Endpoint Audit",
+  "role": "API / developer resource",
+  "website": "https://cian-x402.netlify.app",
+  "logo": null,
+  "description": "Pay-per-call HTTP and TLS endpoint audits.",
+  "docs": null,
+  "endpoint": "https://cian-x402.netlify.app",
+  "networks": [
+    "Base"
+  ],
+  "paymentAddresses": [
+    {
+      "network": "Base",
+      "address": "0x7373e88368378052eb5a449d2ebc95ad7e5f2bef"
+    }
+  ],
+  "settlementExamples": [
+    {
+      "network": "Base",
+      "token": "USDC",
+      "amount": 0.002,
+      "transaction": "0x1d87c15d98f6e9d35b1cc7d3ea2139d1117df0459912cfb79817e741ccc4b11c",
+      "explorer": "https://basescan.org/tx/0x1d87c15d98f6e9d35b1cc7d3ea2139d1117df0459912cfb79817e741ccc4b11c",
+      "receiptStatus": "success",
+      "recipientAmountMatched": true,
+      "operatorSelfPayment": true,
+      "customerIdentityVerified": false
+    }
+  ],
+  "supportedVersions": [],
+  "supportedSchemes": [],
+  "approval": {
+    "status": "approved_basic_directory",
+    "by": "X402blockchains",
+    "date": "2026-11-27",
+    "decisionUrl": "https://github.com/X402blockchains/awesome-x402/pull/12#pullrequestreview-6077264946",
+    "submissionUrl": "https://github.com/X402blockchains/awesome-x402/pull/12",
+    "submissionHead": "5ba53fbf49d77f801f7c41dcdaafb70f80ec76b7",
+    "scope": "Basic directory inclusion with checked Base USDC payment evidence. No broader verification badge."
+  },
+  "x402scan": {
+    "profile": "https://www.x402scan.com/server/b4f4aee0-1fef-4d6e-b8bd-ebc648b80b84",
+    "origin": "https://cian-x402.netlify.app",
+    "past30DayTransactionsAtReview": 2,
+    "source": "x402scan recipient-based index; not API request counts or verified customer counts."
+  },
+  "publication": {
+    "batch": 4,
+    "status": "prepared_not_published",
+    "date": null,
+    "prePublicationChecks": [
+      "Check the canonical website and current unpaid payment terms before publication.",
+      "Confirm the official logo asset and its display.",
+      "Keep Basic listing distinct from route-delivery, security or facilitator verification.",
+      "Obtain or confirm the official logo; no placeholder logo is supplied."
+    ]
+  }
+}

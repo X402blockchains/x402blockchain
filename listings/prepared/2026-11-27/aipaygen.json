@@ -1,0 +1,63 @@
+{
+  "name": "AIPayGen",
+  "role": "API / developer resource",
+  "website": "https://aipaygen.com",
+  "logo": "https://aipaygen.com/logo.svg",
+  "description": "Pay-per-call tools and API discovery for AI agents.",
+  "docs": "https://aipaygen.com/buyers",
+  "endpoint": "https://aipaygen.com",
+  "networks": [
+    "Base"
+  ],
+  "paymentAddresses": [
+    {
+      "network": "Base",
+      "address": "0xeba22e8cd05cb72a2f913099d6cca666dd6d35b0"
+    }
+  ],
+  "settlementExamples": [
+    {
+      "network": "Base",
+      "token": "USDC",
+      "amount": 0.001,
+      "transaction": "0x9d1b1376aae6042e246cc82e0610b44df923afb8363398483a60e154d88f3545",
+      "explorer": "https://basescan.org/tx/0x9d1b1376aae6042e246cc82e0610b44df923afb8363398483a60e154d88f3545",
+      "receiptStatus": "success",
+      "recipientAmountMatched": true,
+      "operatorSelfPayment": false,
+      "customerIdentityVerified": false
+    }
+  ],
+  "supportedVersions": [
+    2
+  ],
+  "supportedSchemes": [
+    "exact"
+  ],
+  "approval": {
+    "status": "approved_basic_directory",
+    "by": "X402blockchains",
+    "date": "2026-11-27",
+    "decisionUrl": "https://github.com/X402blockchains/x402-registry/pull/43#pullrequestreview-6077250489",
+    "submissionUrl": "https://github.com/X402blockchains/x402-registry/pull/43",
+    "submissionHead": "d632bfb369879547af6844149a99f9e55ed3610a",
+    "scope": "Basic directory inclusion with checked Base USDC payment evidence. No broader verification badge."
+  },
+  "x402scan": {
+    "profile": "https://www.x402scan.com/server/a5b51890-506b-455b-8fe5-fe94f0d7f6e8",
+    "origin": "https://aipaygen.com",
+    "past30DayTransactionsAtReview": 876,
+    "source": "x402scan recipient-based index; not API request counts or verified customer counts."
+  },
+  "publication": {
+    "batch": 3,
+    "status": "prepared_not_published",
+    "date": null,
+    "prePublicationChecks": [
+      "Check the canonical website and current unpaid payment terms before publication.",
+      "Confirm the official logo asset and its display.",
+      "Keep Basic listing distinct from route-delivery, security or facilitator verification.",
+      "Repeat the public discovery check; the previous review fetch was unavailable: HTTP Error 403: Forbidden"
+    ]
+  }
+}

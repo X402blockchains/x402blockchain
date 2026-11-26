@@ -1,0 +1,63 @@
+{
+  "name": "AutoTasker Hub",
+  "role": "API / developer resource",
+  "website": "https://autotasker.highkingflower.com",
+  "logo": "https://github.com/breezesamuel.png",
+  "description": "Chinese social-media and market-data APIs for AI agents.",
+  "docs": "https://autotasker.highkingflower.com/openapi.json",
+  "endpoint": "https://autotasker.highkingflower.com",
+  "networks": [
+    "Base"
+  ],
+  "paymentAddresses": [
+    {
+      "network": "Base",
+      "address": "0xb9a9e6d9c4ad1635aa685bba2e235a515a94773c"
+    }
+  ],
+  "settlementExamples": [
+    {
+      "network": "Base",
+      "token": "USDC",
+      "amount": 0.05,
+      "transaction": "0x348242a976b92fb0e4137ae487c30a39dd7d1b2ca4bfefc69a88e5cd319c3112",
+      "explorer": "https://basescan.org/tx/0x348242a976b92fb0e4137ae487c30a39dd7d1b2ca4bfefc69a88e5cd319c3112",
+      "receiptStatus": "success",
+      "recipientAmountMatched": true,
+      "operatorSelfPayment": false,
+      "customerIdentityVerified": false
+    }
+  ],
+  "supportedVersions": [
+    2
+  ],
+  "supportedSchemes": [
+    "exact"
+  ],
+  "approval": {
+    "status": "approved_basic_directory",
+    "by": "X402blockchains",
+    "date": "2026-11-27",
+    "decisionUrl": "https://github.com/X402blockchains/x402-registry/pull/45#pullrequestreview-6077247754",
+    "submissionUrl": "https://github.com/X402blockchains/x402-registry/pull/45",
+    "submissionHead": "71b403e0d9529a776a8d14ab5ce3fd0ce1f7c331",
+    "scope": "Basic directory inclusion with checked Base USDC payment evidence. No broader verification badge."
+  },
+  "x402scan": {
+    "profile": "https://www.x402scan.com/server/0cc80382-ed6f-4611-b1f4-b121bdfac527",
+    "origin": "https://autotasker.highkingflower.com",
+    "past30DayTransactionsAtReview": 2,
+    "source": "x402scan recipient-based index; not API request counts or verified customer counts."
+  },
+  "publication": {
+    "batch": 1,
+    "status": "prepared_not_published",
+    "date": null,
+    "prePublicationChecks": [
+      "Check the canonical website and current unpaid payment terms before publication.",
+      "Confirm the official logo asset and its display.",
+      "Keep Basic listing distinct from route-delivery, security or facilitator verification.",
+      "Confirm the submitted maintainer avatar is the intended listing image."
+    ]
+  }
+}

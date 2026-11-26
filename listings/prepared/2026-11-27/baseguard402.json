@@ -1,0 +1,61 @@
+{
+  "name": "BaseGuard402",
+  "role": "API / developer resource",
+  "website": "https://x402.baseguard402.xyz",
+  "logo": null,
+  "description": "Base-focused data APIs and MCP tools with x402 payments.",
+  "docs": null,
+  "endpoint": "https://x402.baseguard402.xyz",
+  "networks": [
+    "Base"
+  ],
+  "paymentAddresses": [
+    {
+      "network": "Base",
+      "address": "0x811b8434b8365b48373a4620c1b9c8436ea9833b"
+    }
+  ],
+  "settlementExamples": [
+    {
+      "network": "Base",
+      "token": "USDC",
+      "amount": 0.02,
+      "transaction": "0x7c45fd8cfe82ace0751155af76fc23e58f394f1882cba09246dbf917e4a13b32",
+      "explorer": "https://basescan.org/tx/0x7c45fd8cfe82ace0751155af76fc23e58f394f1882cba09246dbf917e4a13b32",
+      "receiptStatus": "success",
+      "recipientAmountMatched": true,
+      "operatorSelfPayment": false,
+      "customerIdentityVerified": false
+    }
+  ],
+  "supportedVersions": [
+    2
+  ],
+  "supportedSchemes": [],
+  "approval": {
+    "status": "approved_basic_directory",
+    "by": "X402blockchains",
+    "date": "2026-11-27",
+    "decisionUrl": "https://github.com/X402blockchains/awesome-x402/pull/22#pullrequestreview-6077263995",
+    "submissionUrl": "https://github.com/X402blockchains/awesome-x402/pull/22",
+    "submissionHead": "d080c2dd19b59432515b2498faa72003d81ce07f",
+    "scope": "Basic directory inclusion with checked Base USDC payment evidence. No broader verification badge."
+  },
+  "x402scan": {
+    "profile": "https://www.x402scan.com/server/06552473-fd38-458c-b4ee-52370b7d54a5",
+    "origin": "https://x402.baseguard402.xyz",
+    "past30DayTransactionsAtReview": 9,
+    "source": "x402scan recipient-based index; not API request counts or verified customer counts."
+  },
+  "publication": {
+    "batch": 1,
+    "status": "prepared_not_published",
+    "date": null,
+    "prePublicationChecks": [
+      "Check the canonical website and current unpaid payment terms before publication.",
+      "Confirm the official logo asset and its display.",
+      "Keep Basic listing distinct from route-delivery, security or facilitator verification.",
+      "Obtain or confirm the official logo; no placeholder logo is supplied."
+    ]
+  }
+}

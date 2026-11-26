@@ -1,0 +1,1223 @@
+{
+  "preparedBy": "X402blockchains",
+  "date": "2026-11-27",
+  "status": "prepared_not_published",
+  "cadence": "Up to five or six projects per publication day; proposed batches are 5, 5, 5 and 4. Dates are not scheduled. Move any item with unresolved publication checks to a later batch.",
+  "projectCount": 19,
+  "batches": [
+    {
+      "batch": 1,
+      "projects": [
+        "Memory01",
+        "AutoTasker Hub",
+        "Taifoon",
+        "BaseGuard402",
+        "FractalAI"
+      ]
+    },
+    {
+      "batch": 2,
+      "projects": [
+        "Trading Signals Toolkit",
+        "Pharos Atlas",
+        "Screwtape.ai",
+        "Extract JSON",
+        "Switch402"
+      ]
+    },
+    {
+      "batch": 3,
+      "projects": [
+        "Neon Developer API",
+        "AIPayGen",
+        "FLINTTECH",
+        "AgentKit Data",
+        "YRUZ"
+      ]
+    },
+    {
+      "batch": 4,
+      "projects": [
+        "Pyfile",
+        "Grey Ridge Signals",
+        "Machina",
+        "Cian Endpoint Audit"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Memory01",
+      "role": "API / developer resource",
+      "website": "https://memory.node01.org/",
+      "logo": "https://memory.node01.org/favicon.ico",
+      "description": "Persistent memory storage and search for AI agents.",
+      "docs": "https://memory.node01.org/llms.txt",
+      "endpoint": "https://memory.node01.org",
+      "networks": [
+        "Base"
+      ],
+      "paymentAddresses": [
+        {
+          "network": "Base",
+          "address": "0xe9a827d9453e9b18040c25bb492a568ddd827549"
+        }
+      ],
+      "settlementExamples": [
+        {
+          "network": "Base",
+          "token": "USDC",
+          "amount": 0.01,
+          "transaction": "0x53152ba5fdb55ec8c77097dc8a65bb676b8ab3e16ddf1f86bf0b30e3db386bee",
+          "explorer": "https://basescan.org/tx/0x53152ba5fdb55ec8c77097dc8a65bb676b8ab3e16ddf1f86bf0b30e3db386bee",
+          "receiptStatus": "success",
+          "recipientAmountMatched": true,
+          "operatorSelfPayment": true,
+          "customerIdentityVerified": false
+        }
+      ],
+      "supportedVersions": [
+        2
+      ],
+      "supportedSchemes": [
+        "exact"
+      ],
+      "approval": {
+        "status": "approved_basic_directory",
+        "by": "X402blockchains",
+        "date": "2026-11-27",
+        "decisionUrl": "https://github.com/X402blockchains/x402-registry/pull/54#pullrequestreview-6077245035",
+        "submissionUrl": "https://github.com/X402blockchains/x402-registry/pull/54",
+        "submissionHead": "58419ea210526fa7ebe826cd251115878674c6e5",
+        "scope": "Basic directory inclusion with checked Base USDC payment evidence. No broader verification badge."
+      },
+      "x402scan": {
+        "profile": "https://www.x402scan.com/server/eb0ca4e3-4f4b-4912-ab75-a8f26fa61416",
+        "origin": "https://memory.node01.org",
+        "past30DayTransactionsAtReview": 32,
+        "source": "x402scan recipient-based index; not API request counts or verified customer counts."
+      },
+      "publication": {
+        "batch": 1,
+        "status": "prepared_not_published",
+        "date": null,
+        "prePublicationChecks": [
+          "Check the canonical website and current unpaid payment terms before publication.",
+          "Confirm the official logo asset and its display.",
+          "Keep Basic listing distinct from route-delivery, security or facilitator verification."
+        ]
+      }
+    },
+    {
+      "name": "AutoTasker Hub",
+      "role": "API / developer resource",
+      "website": "https://autotasker.highkingflower.com",
+      "logo": "https://github.com/breezesamuel.png",
+      "description": "Chinese social-media and market-data APIs for AI agents.",
+      "docs": "https://autotasker.highkingflower.com/openapi.json",
+      "endpoint": "https://autotasker.highkingflower.com",
+      "networks": [
+        "Base"
+      ],
+      "paymentAddresses": [
+        {
+          "network": "Base",
+          "address": "0xb9a9e6d9c4ad1635aa685bba2e235a515a94773c"
+        }
+      ],
+      "settlementExamples": [
+        {
+          "network": "Base",
+          "token": "USDC",
+          "amount": 0.05,
+          "transaction": "0x348242a976b92fb0e4137ae487c30a39dd7d1b2ca4bfefc69a88e5cd319c3112",
+          "explorer": "https://basescan.org/tx/0x348242a976b92fb0e4137ae487c30a39dd7d1b2ca4bfefc69a88e5cd319c3112",
+          "receiptStatus": "success",
+          "recipientAmountMatched": true,
+          "operatorSelfPayment": false,
+          "customerIdentityVerified": false
+        }
+      ],
+      "supportedVersions": [
+        2
+      ],
+      "supportedSchemes": [
+        "exact"
+      ],
+      "approval": {
+        "status": "approved_basic_directory",
+        "by": "X402blockchains",
+        "date": "2026-11-27",
+        "decisionUrl": "https://github.com/X402blockchains/x402-registry/pull/45#pullrequestreview-6077247754",
+        "submissionUrl": "https://github.com/X402blockchains/x402-registry/pull/45",
+        "submissionHead": "71b403e0d9529a776a8d14ab5ce3fd0ce1f7c331",
+        "scope": "Basic directory inclusion with checked Base USDC payment evidence. No broader verification badge."
+      },
+      "x402scan": {
+        "profile": "https://www.x402scan.com/server/0cc80382-ed6f-4611-b1f4-b121bdfac527",
+        "origin": "https://autotasker.highkingflower.com",
+        "past30DayTransactionsAtReview": 2,
+        "source": "x402scan recipient-based index; not API request counts or verified customer counts."
+      },
+      "publication": {
+        "batch": 1,
+        "status": "prepared_not_published",
+        "date": null,
+        "prePublicationChecks": [
+          "Check the canonical website and current unpaid payment terms before publication.",
+          "Confirm the official logo asset and its display.",
+          "Keep Basic listing distinct from route-delivery, security or facilitator verification.",
+          "Confirm the submitted maintainer avatar is the intended listing image."
+        ]
+      }
+    },
+    {
+      "name": "Taifoon",
+      "role": "API / developer resource",
+      "website": "https://www.taifoon.io",
+      "logo": "https://www.taifoon.io/taifoon-logo-512.png",
+      "description": "Pay-per-call agent services including market data and on-chain queries.",
+      "docs": "https://www.taifoon.io/docs/x402-gateway",
+      "endpoint": "https://www.taifoon.io",
+      "networks": [
+        "Base"
+      ],
+      "paymentAddresses": [
+        {
+          "network": "Base",
+          "address": "0x3574999dd4c96eb73bd6e11d4177010c83e14f5b"
+        }
+      ],
+      "settlementExamples": [
+        {
+          "network": "Base",
+          "token": "USDC",
+          "amount": 0.001,
+          "transaction": "0x9fd17de17a43f479c794b4a266b95c0be170a71c3141e9feed101141d7726113",
+          "explorer": "https://basescan.org/tx/0x9fd17de17a43f479c794b4a266b95c0be170a71c3141e9feed101141d7726113",
+          "receiptStatus": "success",
+          "recipientAmountMatched": true,
+          "operatorSelfPayment": false,
+          "customerIdentityVerified": false
+        }
+      ],
+      "supportedVersions": [
+        2
+      ],
+      "supportedSchemes": [
+        "exact"
+      ],
+      "approval": {
+        "status": "approved_basic_directory",
+        "by": "X402blockchains",
+        "date": "2026-11-27",
+        "decisionUrl": "https://github.com/X402blockchains/x402-registry/pull/39#pullrequestreview-6077252548",
+        "submissionUrl": "https://github.com/X402blockchains/x402-registry/pull/39",
+        "submissionHead": "e85e1e3ba6d25e25f2c82e9a6ca38aeab80fc20e",
+        "scope": "Basic directory inclusion with checked Base USDC payment evidence. No broader verification badge."
+      },
+      "x402scan": {
+        "profile": "https://www.x402scan.com/server/f26913ec-3a19-4935-84e7-2a040ec69545",
+        "origin": "https://www.taifoon.io",
+        "past30DayTransactionsAtReview": 476,
+        "source": "x402scan recipient-based index; not API request counts or verified customer counts."
+      },
+      "publication": {
+        "batch": 1,
+        "status": "prepared_not_published",
+        "date": null,
+        "prePublicationChecks": [
+          "Check the canonical website and current unpaid payment terms before publication.",
+          "Confirm the official logo asset and its display.",
+          "Keep Basic listing distinct from route-delivery, security or facilitator verification."
+        ]
+      }
+    },
+    {
+      "name": "BaseGuard402",
+      "role": "API / developer resource",
+      "website": "https://x402.baseguard402.xyz",
+      "logo": null,
+      "description": "Base-focused data APIs and MCP tools with x402 payments.",
+      "docs": null,
+      "endpoint": "https://x402.baseguard402.xyz",
+      "networks": [
+        "Base"
+      ],
+      "paymentAddresses": [
+        {
+          "network": "Base",
+          "address": "0x811b8434b8365b48373a4620c1b9c8436ea9833b"
+        }
+      ],
+      "settlementExamples": [
+        {
+          "network": "Base",
+          "token": "USDC",
+          "amount": 0.02,
+          "transaction": "0x7c45fd8cfe82ace0751155af76fc23e58f394f1882cba09246dbf917e4a13b32",
+          "explorer": "https://basescan.org/tx/0x7c45fd8cfe82ace0751155af76fc23e58f394f1882cba09246dbf917e4a13b32",
+          "receiptStatus": "success",
+          "recipientAmountMatched": true,
+          "operatorSelfPayment": false,
+          "customerIdentityVerified": false
+        }
+      ],
+      "supportedVersions": [
+        2
+      ],
+      "supportedSchemes": [],
+      "approval": {
+        "status": "approved_basic_directory",
+        "by": "X402blockchains",
+        "date": "2026-11-27",
+        "decisionUrl": "https://github.com/X402blockchains/awesome-x402/pull/22#pullrequestreview-6077263995",
+        "submissionUrl": "https://github.com/X402blockchains/awesome-x402/pull/22",
+        "submissionHead": "d080c2dd19b59432515b2498faa72003d81ce07f",
+        "scope": "Basic directory inclusion with checked Base USDC payment evidence. No broader verification badge."
+      },
+      "x402scan": {
+        "profile": "https://www.x402scan.com/server/06552473-fd38-458c-b4ee-52370b7d54a5",
+        "origin": "https://x402.baseguard402.xyz",
+        "past30DayTransactionsAtReview": 9,
+        "source": "x402scan recipient-based index; not API request counts or verified customer counts."
+      },
+      "publication": {
+        "batch": 1,
+        "status": "prepared_not_published",
+        "date": null,
+        "prePublicationChecks": [
+          "Check the canonical website and current unpaid payment terms before publication.",
+          "Confirm the official logo asset and its display.",
+          "Keep Basic listing distinct from route-delivery, security or facilitator verification.",
+          "Obtain or confirm the official logo; no placeholder logo is supplied."
+        ]
+      }
+    },
+    {
+      "name": "FractalAI",
+      "role": "API / developer resource",
+      "website": "https://fractalai.net.co",
+      "logo": null,
+      "description": "Developer APIs and receipt-related resources with x402 payments.",
+      "docs": null,
+      "endpoint": "https://fractalai.net.co",
+      "networks": [
+        "Base"
+      ],
+      "paymentAddresses": [
+        {
+          "network": "Base",
+          "address": "0xc13789e82661635d9cea38a53a0390cf9939ef4f"
+        }
+      ],
+      "settlementExamples": [
+        {
+          "network": "Base",
+          "token": "USDC",
+          "amount": 0.05,
+          "transaction": "0x40718b38e5e657b1b557f969e9dd3d6b6496b4f97515957fdc9eb7fae73748ca",
+          "explorer": "https://basescan.org/tx/0x40718b38e5e657b1b557f969e9dd3d6b6496b4f97515957fdc9eb7fae73748ca",
+          "receiptStatus": "success",
+          "recipientAmountMatched": true,
+          "operatorSelfPayment": false,
+          "customerIdentityVerified": false
+        }
+      ],
+      "supportedVersions": [],
+      "supportedSchemes": [],
+      "approval": {
+        "status": "approved_basic_directory",
+        "by": "X402blockchains",
+        "date": "2026-11-27",
+        "decisionUrl": "https://github.com/X402blockchains/awesome-x402/pull/3#pullrequestreview-6077266280",
+        "submissionUrl": "https://github.com/X402blockchains/awesome-x402/pull/3",
+        "submissionHead": "93a583001cdfa9ab0f2a3b55a4c3e2c01498bf8f",
+        "scope": "Basic directory inclusion with checked Base USDC payment evidence. No broader verification badge."
+      },
+      "x402scan": {
+        "profile": "https://www.x402scan.com/server/c014e3f5-376f-4825-ba48-ef66b9f9d7d0",
+        "origin": "https://fractalai.net.co",
+        "past30DayTransactionsAtReview": 34,
+        "source": "x402scan recipient-based index; not API request counts or verified customer counts."
+      },
+      "publication": {
+        "batch": 1,
+        "status": "prepared_not_published",
+        "date": null,
+        "prePublicationChecks": [
+          "Check the canonical website and current unpaid payment terms before publication.",
+          "Confirm the official logo asset and its display.",
+          "Keep Basic listing distinct from route-delivery, security or facilitator verification.",
+          "Obtain or confirm the official logo; no placeholder logo is supplied.",
+          "Do not describe inclusion as validation of post-quantum or cryptographic-security claims."
+        ]
+      }
+    },
+    {
+      "name": "Trading Signals Toolkit",
+      "role": "API / developer resource",
+      "website": "https://signals.incomefather.com",
+      "logo": "https://signals.incomefather.com/favicon-32.png",
+      "description": "Crypto market-data and token-check APIs for agents and developers.",
+      "docs": "https://signals.incomefather.com/llms.txt",
+      "endpoint": "https://signals.incomefather.com",
+      "networks": [
+        "Base"
+      ],
+      "paymentAddresses": [
+        {
+          "network": "Base",
+          "address": "0x6d7be981c103ed360874a7703ad3cd6a98929afb"
+        }
+      ],
+      "settlementExamples": [
+        {
+          "network": "Base",
+          "token": "USDC",
+          "amount": 0.01,
+          "transaction": "0x0000e05cb47a686419c1280178287cb83a9f3184b90da83f636bd38f816119b0",
+          "explorer": "https://basescan.org/tx/0x0000e05cb47a686419c1280178287cb83a9f3184b90da83f636bd38f816119b0",
+          "receiptStatus": "success",
+          "recipientAmountMatched": true,
+          "operatorSelfPayment": false,
+          "customerIdentityVerified": false
+        }
+      ],
+      "supportedVersions": [
+        2
+      ],
+      "supportedSchemes": [
+        "exact"
+      ],
+      "approval": {
+        "status": "approved_basic_directory",
+        "by": "X402blockchains",
+        "date": "2026-11-27",
+        "decisionUrl": "https://github.com/X402blockchains/x402-registry/pull/42#pullrequestreview-6077251576",
+        "submissionUrl": "https://github.com/X402blockchains/x402-registry/pull/42",
+        "submissionHead": "1b96878757e218e3ad2c33128811b665fd261185",
+        "scope": "Basic directory inclusion with checked Base USDC payment evidence. No broader verification badge."
+      },
+      "x402scan": {
+        "profile": "https://www.x402scan.com/server/3dfb6f29-04e3-41c1-ade5-dcfb8a03bca2",
+        "origin": "https://signals.incomefather.com",
+        "past30DayTransactionsAtReview": 70,
+        "source": "x402scan recipient-based index; not API request counts or verified customer counts."
+      },
+      "publication": {
+        "batch": 2,
+        "status": "prepared_not_published",
+        "date": null,
+        "prePublicationChecks": [
+          "Check the canonical website and current unpaid payment terms before publication.",
+          "Confirm the official logo asset and its display.",
+          "Keep Basic listing distinct from route-delivery, security or facilitator verification."
+        ]
+      }
+    },
+    {
+      "name": "Pharos Atlas",
+      "role": "API / developer resource",
+      "website": "https://pharosatlas.com",
+      "logo": "https://pharosatlas.com/brand/pharos-mark.png",
+      "description": "Structured trade information and specialist-source APIs.",
+      "docs": "https://pharosatlas.info/network",
+      "endpoint": "https://billing.pharosatlas.com",
+      "networks": [
+        "Base"
+      ],
+      "paymentAddresses": [
+        {
+          "network": "Base",
+          "address": "0x6ac716842c089aaeec8b3041f8096e0823254a84"
+        }
+      ],
+      "settlementExamples": [
+        {
+          "network": "Base",
+          "token": "USDC",
+          "amount": 0.01,
+          "transaction": "0xe8a84767602b2c3f5c9c7e31ea2792fe7a9a3a413e63a79119491a20cb925db2",
+          "explorer": "https://basescan.org/tx/0xe8a84767602b2c3f5c9c7e31ea2792fe7a9a3a413e63a79119491a20cb925db2",
+          "receiptStatus": "success",
+          "recipientAmountMatched": true,
+          "operatorSelfPayment": false,
+          "customerIdentityVerified": false
+        }
+      ],
+      "supportedVersions": [
+        2
+      ],
+      "supportedSchemes": [
+        "exact"
+      ],
+      "approval": {
+        "status": "approved_basic_directory",
+        "by": "X402blockchains",
+        "date": "2026-11-27",
+        "decisionUrl": "https://github.com/X402blockchains/x402-registry/pull/27#pullrequestreview-6077256576",
+        "submissionUrl": "https://github.com/X402blockchains/x402-registry/pull/27",
+        "submissionHead": "ba6add4d7bbaf0326ac26e1edf487830a063435f",
+        "scope": "Basic directory inclusion with checked Base USDC payment evidence. No broader verification badge."
+      },
+      "x402scan": {
+        "profile": "https://www.x402scan.com/server/f69ee517-2af3-4387-8f87-c007f8c7f423",
+        "origin": "https://billing.pharosatlas.com",
+        "past30DayTransactionsAtReview": 37,
+        "source": "x402scan recipient-based index; not API request counts or verified customer counts."
+      },
+      "publication": {
+        "batch": 2,
+        "status": "prepared_not_published",
+        "date": null,
+        "prePublicationChecks": [
+          "Check the canonical website and current unpaid payment terms before publication.",
+          "Confirm the official logo asset and its display.",
+          "Keep Basic listing distinct from route-delivery, security or facilitator verification."
+        ]
+      }
+    },
+    {
+      "name": "Screwtape.ai",
+      "role": "API / developer resource",
+      "website": "https://screwtape.ai",
+      "logo": null,
+      "description": "Agent spending guardrails, decisions and payment-related receipts.",
+      "docs": null,
+      "endpoint": "https://screwtape.ai",
+      "networks": [
+        "Base"
+      ],
+      "paymentAddresses": [
+        {
+          "network": "Base",
+          "address": "0x028bb9a57b8c27c22f6b39dd00e7eff1fb60344b"
+        }
+      ],
+      "settlementExamples": [
+        {
+          "network": "Base",
+          "token": "USDC",
+          "amount": 0.003,
+          "transaction": "0x80259c21d9b1bf6bbb4e0f888f2f6e2f9a3c76e07857ec8fab674f513585c503",
+          "explorer": "https://basescan.org/tx/0x80259c21d9b1bf6bbb4e0f888f2f6e2f9a3c76e07857ec8fab674f513585c503",
+          "receiptStatus": "success",
+          "recipientAmountMatched": true,
+          "operatorSelfPayment": false,
+          "customerIdentityVerified": false
+        }
+      ],
+      "supportedVersions": [],
+      "supportedSchemes": [],
+      "approval": {
+        "status": "approved_basic_directory",
+        "by": "X402blockchains",
+        "date": "2026-11-27",
+        "decisionUrl": "https://github.com/X402blockchains/awesome-x402/issues/20#issuecomment-7197209030",
+        "submissionUrl": "https://github.com/X402blockchains/awesome-x402/issues/20",
+        "submissionHead": null,
+        "scope": "Basic directory inclusion with checked Base USDC payment evidence. No broader verification badge."
+      },
+      "x402scan": {
+        "profile": "https://www.x402scan.com/server/c3b854a5-627d-4369-83e2-eee7d029996f",
+        "origin": "https://screwtape.ai",
+        "past30DayTransactionsAtReview": 29,
+        "source": "x402scan recipient-based index; not API request counts or verified customer counts."
+      },
+      "publication": {
+        "batch": 2,
+        "status": "prepared_not_published",
+        "date": null,
+        "prePublicationChecks": [
+          "Check the canonical website and current unpaid payment terms before publication.",
+          "Confirm the official logo asset and its display.",
+          "Keep Basic listing distinct from route-delivery, security or facilitator verification.",
+          "Obtain or confirm the official logo; no placeholder logo is supplied."
+        ]
+      }
+    },
+    {
+      "name": "Extract JSON",
+      "role": "API / developer resource",
+      "website": "https://extract-json.mintfacts.workers.dev",
+      "logo": null,
+      "description": "Convert text into schema-valid JSON through a pay-per-call API.",
+      "docs": null,
+      "endpoint": "https://extract-json.mintfacts.workers.dev",
+      "networks": [
+        "Base"
+      ],
+      "paymentAddresses": [
+        {
+          "network": "Base",
+          "address": "0x59d0d643f1c91aca0b1dcd4be20edf188645845f"
+        }
+      ],
+      "settlementExamples": [
+        {
+          "network": "Base",
+          "token": "USDC",
+          "amount": 0.002,
+          "transaction": "0xc24f1814c0887692d16fbd42f9871f31e9da0bb77e756b3039a52664563980cc",
+          "explorer": "https://basescan.org/tx/0xc24f1814c0887692d16fbd42f9871f31e9da0bb77e756b3039a52664563980cc",
+          "receiptStatus": "success",
+          "recipientAmountMatched": true,
+          "operatorSelfPayment": false,
+          "customerIdentityVerified": false
+        }
+      ],
+      "supportedVersions": [],
+      "supportedSchemes": [],
+      "approval": {
+        "status": "approved_basic_directory",
+        "by": "X402blockchains",
+        "date": "2026-11-27",
+        "decisionUrl": "https://github.com/X402blockchains/awesome-x402/pull/24#pullrequestreview-6077261749",
+        "submissionUrl": "https://github.com/X402blockchains/awesome-x402/pull/24",
+        "submissionHead": "532721c52977299a9fc9363642277e770012089e",
+        "scope": "Basic directory inclusion with checked Base USDC payment evidence. No broader verification badge."
+      },
+      "x402scan": {
+        "profile": "https://www.x402scan.com/server/7f8cbb57-8bc8-49f3-adbf-0a78ec5a63ec",
+        "origin": "https://extract-json.mintfacts.workers.dev",
+        "past30DayTransactionsAtReview": 11,
+        "source": "x402scan recipient-based index; not API request counts or verified customer counts."
+      },
+      "publication": {
+        "batch": 2,
+        "status": "prepared_not_published",
+        "date": null,
+        "prePublicationChecks": [
+          "Check the canonical website and current unpaid payment terms before publication.",
+          "Confirm the official logo asset and its display.",
+          "Keep Basic listing distinct from route-delivery, security or facilitator verification.",
+          "Obtain or confirm the official logo; no placeholder logo is supplied."
+        ]
+      }
+    },
+    {
+      "name": "Switch402",
+      "role": "API / developer resource",
+      "website": "https://switch402.fly.dev",
+      "logo": null,
+      "description": "Pay-per-call inference and action tools for software agents.",
+      "docs": null,
+      "endpoint": "https://switch402.fly.dev",
+      "networks": [
+        "Base"
+      ],
+      "paymentAddresses": [
+        {
+          "network": "Base",
+          "address": "0xedc5e77f1f0a2dd9ab919687d54af2f312387a63"
+        }
+      ],
+      "settlementExamples": [
+        {
+          "network": "Base",
+          "token": "USDC",
+          "amount": 0.07,
+          "transaction": "0x2fa0a5a2722e9f94622d6f726d40c30bef2fcb08c26c7c8d7fd4bddcb1744e45",
+          "explorer": "https://basescan.org/tx/0x2fa0a5a2722e9f94622d6f726d40c30bef2fcb08c26c7c8d7fd4bddcb1744e45",
+          "receiptStatus": "success",
+          "recipientAmountMatched": true,
+          "operatorSelfPayment": true,
+          "customerIdentityVerified": false
+        }
+      ],
+      "supportedVersions": [],
+      "supportedSchemes": [],
+      "approval": {
+        "status": "approved_basic_directory",
+        "by": "X402blockchains",
+        "date": "2026-11-27",
+        "decisionUrl": "https://github.com/X402blockchains/awesome-x402/pull/23#pullrequestreview-6077262787",
+        "submissionUrl": "https://github.com/X402blockchains/awesome-x402/pull/23",
+        "submissionHead": "0ab2e629a1a9c7a650428aab823d9e288cb6769b",
+        "scope": "Basic directory inclusion with checked Base USDC payment evidence. No broader verification badge."
+      },
+      "x402scan": {
+        "profile": "https://www.x402scan.com/server/d1b06f8b-03cf-4c10-87fa-f8d6db630ef9",
+        "origin": "https://switch402.fly.dev",
+        "past30DayTransactionsAtReview": 27,
+        "source": "x402scan recipient-based index; not API request counts or verified customer counts."
+      },
+      "publication": {
+        "batch": 2,
+        "status": "prepared_not_published",
+        "date": null,
+        "prePublicationChecks": [
+          "Check the canonical website and current unpaid payment terms before publication.",
+          "Confirm the official logo asset and its display.",
+          "Keep Basic listing distinct from route-delivery, security or facilitator verification.",
+          "Obtain or confirm the official logo; no placeholder logo is supplied."
+        ]
+      }
+    },
+    {
+      "name": "Neon Developer API",
+      "role": "API / developer resource",
+      "website": "https://neon-api.austneo.workers.dev",
+      "logo": "https://raw.githubusercontent.com/austneo/neon-api/main/logo.svg",
+      "description": "Web-page conversion to Markdown and structured link extraction.",
+      "docs": "https://neon-api.austneo.workers.dev/docs",
+      "endpoint": "https://neon-api.austneo.workers.dev",
+      "networks": [
+        "Base"
+      ],
+      "paymentAddresses": [
+        {
+          "network": "Base",
+          "address": "0xfbf41f92592b3ff315983e41f058c21a1e8b8d48"
+        }
+      ],
+      "settlementExamples": [
+        {
+          "network": "Base",
+          "token": "USDC",
+          "amount": 0.01,
+          "transaction": "0x78a08f4014bd97cf2934ac281638b1ff33696ca06038def098fd3c263329478b",
+          "explorer": "https://basescan.org/tx/0x78a08f4014bd97cf2934ac281638b1ff33696ca06038def098fd3c263329478b",
+          "receiptStatus": "success",
+          "recipientAmountMatched": true,
+          "operatorSelfPayment": false,
+          "customerIdentityVerified": false
+        }
+      ],
+      "supportedVersions": [
+        2
+      ],
+      "supportedSchemes": [
+        "exact"
+      ],
+      "approval": {
+        "status": "approved_basic_directory",
+        "by": "X402blockchains",
+        "date": "2026-11-27",
+        "decisionUrl": "https://github.com/X402blockchains/x402-registry/pull/52#pullrequestreview-6077246440",
+        "submissionUrl": "https://github.com/X402blockchains/x402-registry/pull/52",
+        "submissionHead": "73247d47d4a595bd5a1b7380118d4bfa05f55098",
+        "scope": "Basic directory inclusion with checked Base USDC payment evidence. No broader verification badge."
+      },
+      "x402scan": {
+        "profile": "https://www.x402scan.com/server/3f66a86a-aed6-49e4-b582-d8517444e898",
+        "origin": "https://neon-api.austneo.workers.dev",
+        "past30DayTransactionsAtReview": 1,
+        "source": "x402scan recipient-based index; not API request counts or verified customer counts."
+      },
+      "publication": {
+        "batch": 3,
+        "status": "prepared_not_published",
+        "date": null,
+        "prePublicationChecks": [
+          "Check the canonical website and current unpaid payment terms before publication.",
+          "Confirm the official logo asset and its display.",
+          "Keep Basic listing distinct from route-delivery, security or facilitator verification.",
+          "Repeat the public discovery check; the previous review fetch was unavailable: HTTP Error 403: Forbidden"
+        ]
+      }
+    },
+    {
+      "name": "AIPayGen",
+      "role": "API / developer resource",
+      "website": "https://aipaygen.com",
+      "logo": "https://aipaygen.com/logo.svg",
+      "description": "Pay-per-call tools and API discovery for AI agents.",
+      "docs": "https://aipaygen.com/buyers",
+      "endpoint": "https://aipaygen.com",
+      "networks": [
+        "Base"
+      ],
+      "paymentAddresses": [
+        {
+          "network": "Base",
+          "address": "0xeba22e8cd05cb72a2f913099d6cca666dd6d35b0"
+        }
+      ],
+      "settlementExamples": [
+        {
+          "network": "Base",
+          "token": "USDC",
+          "amount": 0.001,
+          "transaction": "0x9d1b1376aae6042e246cc82e0610b44df923afb8363398483a60e154d88f3545",
+          "explorer": "https://basescan.org/tx/0x9d1b1376aae6042e246cc82e0610b44df923afb8363398483a60e154d88f3545",
+          "receiptStatus": "success",
+          "recipientAmountMatched": true,
+          "operatorSelfPayment": false,
+          "customerIdentityVerified": false
+        }
+      ],
+      "supportedVersions": [
+        2
+      ],
+      "supportedSchemes": [
+        "exact"
+      ],
+      "approval": {
+        "status": "approved_basic_directory",
+        "by": "X402blockchains",
+        "date": "2026-11-27",
+        "decisionUrl": "https://github.com/X402blockchains/x402-registry/pull/43#pullrequestreview-6077250489",
+        "submissionUrl": "https://github.com/X402blockchains/x402-registry/pull/43",
+        "submissionHead": "d632bfb369879547af6844149a99f9e55ed3610a",
+        "scope": "Basic directory inclusion with checked Base USDC payment evidence. No broader verification badge."
+      },
+      "x402scan": {
+        "profile": "https://www.x402scan.com/server/a5b51890-506b-455b-8fe5-fe94f0d7f6e8",
+        "origin": "https://aipaygen.com",
+        "past30DayTransactionsAtReview": 876,
+        "source": "x402scan recipient-based index; not API request counts or verified customer counts."
+      },
+      "publication": {
+        "batch": 3,
+        "status": "prepared_not_published",
+        "date": null,
+        "prePublicationChecks": [
+          "Check the canonical website and current unpaid payment terms before publication.",
+          "Confirm the official logo asset and its display.",
+          "Keep Basic listing distinct from route-delivery, security or facilitator verification.",
+          "Repeat the public discovery check; the previous review fetch was unavailable: HTTP Error 403: Forbidden"
+        ]
+      }
+    },
+    {
+      "name": "FLINTTECH",
+      "role": "API / developer resource",
+      "website": "https://flinttech-x402.f1intt3ch.workers.dev/",
+      "logo": "https://flinttech-x402.f1intt3ch.workers.dev/favicon.svg",
+      "description": "Construction-permit, contractor and website-audit data APIs.",
+      "docs": "https://flinttech-x402.f1intt3ch.workers.dev/llms.txt",
+      "endpoint": "https://flinttech-x402.f1intt3ch.workers.dev",
+      "networks": [
+        "Base"
+      ],
+      "paymentAddresses": [
+        {
+          "network": "Base",
+          "address": "0x328c4dbb5b9e0811835e7d8c58295857b4f7f7e5"
+        }
+      ],
+      "settlementExamples": [
+        {
+          "network": "Base",
+          "token": "USDC",
+          "amount": 0.05,
+          "transaction": "0x208a57c77ccf98fc86e34890e7bc6cb519dc68b51d674a692dc9999768e7da65",
+          "explorer": "https://basescan.org/tx/0x208a57c77ccf98fc86e34890e7bc6cb519dc68b51d674a692dc9999768e7da65",
+          "receiptStatus": "success",
+          "recipientAmountMatched": true,
+          "operatorSelfPayment": false,
+          "customerIdentityVerified": false
+        }
+      ],
+      "supportedVersions": [
+        2
+      ],
+      "supportedSchemes": [
+        "exact"
+      ],
+      "approval": {
+        "status": "approved_basic_directory",
+        "by": "X402blockchains",
+        "date": "2026-11-27",
+        "decisionUrl": "https://github.com/X402blockchains/x402-registry/pull/32#pullrequestreview-6077253996",
+        "submissionUrl": "https://github.com/X402blockchains/x402-registry/pull/32",
+        "submissionHead": "1acf9488952969050d7c5f8d1c32b18f07298646",
+        "scope": "Basic directory inclusion with checked Base USDC payment evidence. No broader verification badge."
+      },
+      "x402scan": {
+        "profile": "https://www.x402scan.com/server/240db21e-fd7c-467e-bff1-d6839558f056",
+        "origin": "https://flinttech-x402.f1intt3ch.workers.dev",
+        "past30DayTransactionsAtReview": 30,
+        "source": "x402scan recipient-based index; not API request counts or verified customer counts."
+      },
+      "publication": {
+        "batch": 3,
+        "status": "prepared_not_published",
+        "date": null,
+        "prePublicationChecks": [
+          "Check the canonical website and current unpaid payment terms before publication.",
+          "Confirm the official logo asset and its display.",
+          "Keep Basic listing distinct from route-delivery, security or facilitator verification.",
+          "Repeat the public discovery check; the previous review fetch was unavailable: HTTP Error 403: Forbidden"
+        ]
+      }
+    },
+    {
+      "name": "AgentKit Data",
+      "role": "API / developer resource",
+      "website": "https://x402-apis-production.up.railway.app",
+      "logo": null,
+      "description": "Web-to-Markdown, token-check and wallet-data APIs.",
+      "docs": "https://x402-apis-production.up.railway.app/openapi.json",
+      "endpoint": "https://x402-apis-production.up.railway.app",
+      "networks": [
+        "Base"
+      ],
+      "paymentAddresses": [
+        {
+          "network": "Base",
+          "address": "0xd9784f8122af988e51b3183f725b0b53bcb8278a"
+        }
+      ],
+      "settlementExamples": [
+        {
+          "network": "Base",
+          "token": "USDC",
+          "amount": 0.001,
+          "transaction": "0xe4820a7a4c324599976bbb1876c93a6883472f6abfbb65a9eda00bce2d353772",
+          "explorer": "https://basescan.org/tx/0xe4820a7a4c324599976bbb1876c93a6883472f6abfbb65a9eda00bce2d353772",
+          "receiptStatus": "success",
+          "recipientAmountMatched": true,
+          "operatorSelfPayment": false,
+          "customerIdentityVerified": false
+        }
+      ],
+      "supportedVersions": [
+        2
+      ],
+      "supportedSchemes": [
+        "exact"
+      ],
+      "approval": {
+        "status": "approved_basic_directory",
+        "by": "X402blockchains",
+        "date": "2026-11-27",
+        "decisionUrl": "https://github.com/X402blockchains/x402-registry/pull/31#pullrequestreview-6077255408",
+        "submissionUrl": "https://github.com/X402blockchains/x402-registry/pull/31",
+        "submissionHead": "5566ca554a65dc9c8b35dcd1a1a7578cb1721403",
+        "scope": "Basic directory inclusion with checked Base USDC payment evidence. No broader verification badge."
+      },
+      "x402scan": {
+        "profile": "https://www.x402scan.com/server/a8b15e55-674d-4516-ab1e-3948ff3b7775",
+        "origin": "https://x402-apis-production.up.railway.app",
+        "past30DayTransactionsAtReview": 5,
+        "source": "x402scan recipient-based index; not API request counts or verified customer counts."
+      },
+      "publication": {
+        "batch": 3,
+        "status": "prepared_not_published",
+        "date": null,
+        "prePublicationChecks": [
+          "Check the canonical website and current unpaid payment terms before publication.",
+          "Confirm the official logo asset and its display.",
+          "Keep Basic listing distinct from route-delivery, security or facilitator verification.",
+          "Obtain or confirm the official logo; no placeholder logo is supplied.",
+          "Confirm the current paid route recipient against the payment challenge; the discovery document did not contain the indexed recipient."
+        ]
+      }
+    },
+    {
+      "name": "YRUZ",
+      "role": "API / developer resource",
+      "website": "https://yruz.one",
+      "logo": "https://yruz.one/content/themes/yruz/images/favicon.png",
+      "description": "Crypto, web and developer APIs with x402 payments.",
+      "docs": "https://yruz.one/llms.txt",
+      "endpoint": "https://yruz.one",
+      "networks": [
+        "Base"
+      ],
+      "paymentAddresses": [
+        {
+          "network": "Base",
+          "address": "0x235b73d50752800d9fae24f51beb08f47076c67a"
+        }
+      ],
+      "settlementExamples": [
+        {
+          "network": "Base",
+          "token": "USDC",
+          "amount": 0.002,
+          "transaction": "0x2f43baf6017e57203b047cbbb1464810f2f4533f61b53fa5e16ac398230f12f5",
+          "explorer": "https://basescan.org/tx/0x2f43baf6017e57203b047cbbb1464810f2f4533f61b53fa5e16ac398230f12f5",
+          "receiptStatus": "success",
+          "recipientAmountMatched": true,
+          "operatorSelfPayment": false,
+          "customerIdentityVerified": false
+        }
+      ],
+      "supportedVersions": [
+        2
+      ],
+      "supportedSchemes": [
+        "exact"
+      ],
+      "approval": {
+        "status": "approved_basic_directory",
+        "by": "X402blockchains",
+        "date": "2026-11-27",
+        "decisionUrl": "https://github.com/X402blockchains/x402-registry/pull/18#pullrequestreview-6077258422",
+        "submissionUrl": "https://github.com/X402blockchains/x402-registry/pull/18",
+        "submissionHead": "08102a719838f140734708ba1803ab605d5feef5",
+        "scope": "Basic directory inclusion with checked Base USDC payment evidence. No broader verification badge."
+      },
+      "x402scan": {
+        "profile": "https://www.x402scan.com/server/104439b5-1e1b-400d-9907-354ddfee942e",
+        "origin": "https://yruz.one",
+        "past30DayTransactionsAtReview": 3,
+        "source": "x402scan recipient-based index; not API request counts or verified customer counts."
+      },
+      "publication": {
+        "batch": 3,
+        "status": "prepared_not_published",
+        "date": null,
+        "prePublicationChecks": [
+          "Check the canonical website and current unpaid payment terms before publication.",
+          "Confirm the official logo asset and its display.",
+          "Keep Basic listing distinct from route-delivery, security or facilitator verification.",
+          "Confirm the current paid route recipient against the payment challenge; the discovery document did not contain the indexed recipient."
+        ]
+      }
+    },
+    {
+      "name": "Pyfile",
+      "role": "API / developer resource",
+      "website": "https://pyfile-agent.taile3ff35.ts.net/llms.txt",
+      "logo": "https://pyfile-agent.taile3ff35.ts.net/favicon.svg",
+      "description": "Pay-per-call web search, page conversion and developer tools.",
+      "docs": "https://pyfile-agent.taile3ff35.ts.net/llms.txt",
+      "endpoint": "https://pyfile-agent.taile3ff35.ts.net",
+      "networks": [
+        "Base"
+      ],
+      "paymentAddresses": [
+        {
+          "network": "Base",
+          "address": "0xa43774fd2e867fc45b782456d78f135a215d5561"
+        }
+      ],
+      "settlementExamples": [
+        {
+          "network": "Base",
+          "token": "USDC",
+          "amount": 0.003,
+          "transaction": "0x1932f926875eaf31d674228de903c75ed119570ff385e546333075ca40749dba",
+          "explorer": "https://basescan.org/tx/0x1932f926875eaf31d674228de903c75ed119570ff385e546333075ca40749dba",
+          "receiptStatus": "success",
+          "recipientAmountMatched": true,
+          "operatorSelfPayment": false,
+          "customerIdentityVerified": false
+        }
+      ],
+      "supportedVersions": [
+        2
+      ],
+      "supportedSchemes": [
+        "exact"
+      ],
+      "approval": {
+        "status": "approved_basic_directory",
+        "by": "X402blockchains",
+        "date": "2026-11-27",
+        "decisionUrl": "https://github.com/X402blockchains/x402-registry/pull/44#pullrequestreview-6077248742",
+        "submissionUrl": "https://github.com/X402blockchains/x402-registry/pull/44",
+        "submissionHead": "ffe3ea05ef801d080ec76c21f2a63d2dd54eebb1",
+        "scope": "Basic directory inclusion with checked Base USDC payment evidence. No broader verification badge."
+      },
+      "x402scan": {
+        "profile": "https://www.x402scan.com/server/7a30fe67-c742-4f7b-a2f5-9b126045b709",
+        "origin": "https://pyfile-agent.taile3ff35.ts.net",
+        "past30DayTransactionsAtReview": 89,
+        "source": "x402scan recipient-based index; not API request counts or verified customer counts."
+      },
+      "publication": {
+        "batch": 4,
+        "status": "prepared_not_published",
+        "date": null,
+        "prePublicationChecks": [
+          "Check the canonical website and current unpaid payment terms before publication.",
+          "Confirm the official logo asset and its display.",
+          "Keep Basic listing distinct from route-delivery, security or facilitator verification.",
+          "Repeat the public discovery check; the previous review fetch was unavailable: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+        ]
+      }
+    },
+    {
+      "name": "Grey Ridge Signals",
+      "role": "API / developer resource",
+      "website": "https://greyridgesignals.ai",
+      "logo": "https://greyridgesignals.ai/favicon.svg",
+      "description": "Pay-per-call crypto market and on-chain data APIs.",
+      "docs": "https://x402-data-api.sigrunner.workers.dev/llms.txt",
+      "endpoint": "https://x402-data-api.sigrunner.workers.dev",
+      "networks": [
+        "Base"
+      ],
+      "paymentAddresses": [
+        {
+          "network": "Base",
+          "address": "0x5765ae06a52dc7a0bb71c36a11db512c7ea9ed10"
+        }
+      ],
+      "settlementExamples": [
+        {
+          "network": "Base",
+          "token": "USDC",
+          "amount": 0.001,
+          "transaction": "0xed8a9697e110347253d26460f09cb98f65e1d36931355e4a61abd42c2c4b2f4e",
+          "explorer": "https://basescan.org/tx/0xed8a9697e110347253d26460f09cb98f65e1d36931355e4a61abd42c2c4b2f4e",
+          "receiptStatus": "success",
+          "recipientAmountMatched": true,
+          "operatorSelfPayment": false,
+          "customerIdentityVerified": false
+        }
+      ],
+      "supportedVersions": [
+        2
+      ],
+      "supportedSchemes": [
+        "exact"
+      ],
+      "approval": {
+        "status": "approved_basic_directory",
+        "by": "X402blockchains",
+        "date": "2026-11-27",
+        "decisionUrl": "https://github.com/X402blockchains/x402-registry/pull/19#pullrequestreview-6077257608",
+        "submissionUrl": "https://github.com/X402blockchains/x402-registry/pull/19",
+        "submissionHead": "dd0656e106ad9fa6bef86afca5fa21e44e856705",
+        "scope": "Basic directory inclusion with checked Base USDC payment evidence. No broader verification badge."
+      },
+      "x402scan": {
+        "profile": "https://www.x402scan.com/server/ece5255c-297a-4af6-9c8b-f32925f81f32",
+        "origin": "https://x402-data-api.sigrunner.workers.dev",
+        "past30DayTransactionsAtReview": 200,
+        "source": "x402scan recipient-based index; not API request counts or verified customer counts."
+      },
+      "publication": {
+        "batch": 4,
+        "status": "prepared_not_published",
+        "date": null,
+        "prePublicationChecks": [
+          "Check the canonical website and current unpaid payment terms before publication.",
+          "Confirm the official logo asset and its display.",
+          "Keep Basic listing distinct from route-delivery, security or facilitator verification.",
+          "Repeat the public discovery check; the previous review fetch was unavailable: HTTP Error 403: Forbidden"
+        ]
+      }
+    },
+    {
+      "name": "Machina",
+      "role": "API / developer resource",
+      "website": "https://mach402.dev",
+      "logo": "https://mach402.dev/logo.png",
+      "description": "Machine-to-machine utility APIs paid per call in USDC.",
+      "docs": "https://mach402.dev/docs",
+      "endpoint": "https://mach402.dev",
+      "networks": [
+        "Base"
+      ],
+      "paymentAddresses": [
+        {
+          "network": "Base",
+          "address": "0x14b21d80bf5776437dd4f1043bdaf31e60b366ad"
+        }
+      ],
+      "settlementExamples": [
+        {
+          "network": "Base",
+          "token": "USDC",
+          "amount": 0.005,
+          "transaction": "0xc5d6ea098d10fad3cecbc13243e02048e41a51023726bf841746c72d4c2461ea",
+          "explorer": "https://basescan.org/tx/0xc5d6ea098d10fad3cecbc13243e02048e41a51023726bf841746c72d4c2461ea",
+          "receiptStatus": "success",
+          "recipientAmountMatched": true,
+          "operatorSelfPayment": false,
+          "customerIdentityVerified": false
+        }
+      ],
+      "supportedVersions": [
+        2
+      ],
+      "supportedSchemes": [
+        "exact"
+      ],
+      "approval": {
+        "status": "approved_basic_directory",
+        "by": "X402blockchains",
+        "date": "2026-11-27",
+        "decisionUrl": "https://github.com/X402blockchains/x402-registry/pull/15#pullrequestreview-6077260443",
+        "submissionUrl": "https://github.com/X402blockchains/x402-registry/pull/15",
+        "submissionHead": "e0c4e5eb7a23ff6b56d6c21ca625c4f4ab39e677",
+        "scope": "Basic directory inclusion with checked Base USDC payment evidence. No broader verification badge."
+      },
+      "x402scan": {
+        "profile": "https://www.x402scan.com/server/8f161162-fe2d-4ca5-9256-406c36f155d6",
+        "origin": "https://mach402.dev",
+        "past30DayTransactionsAtReview": 11,
+        "source": "x402scan recipient-based index; not API request counts or verified customer counts."
+      },
+      "publication": {
+        "batch": 4,
+        "status": "prepared_not_published",
+        "date": null,
+        "prePublicationChecks": [
+          "Check the canonical website and current unpaid payment terms before publication.",
+          "Confirm the official logo asset and its display.",
+          "Keep Basic listing distinct from route-delivery, security or facilitator verification.",
+          "Repeat the public discovery check; the previous review fetch was unavailable: HTTP Error 403: Forbidden"
+        ]
+      }
+    },
+    {
+      "name": "Cian Endpoint Audit",
+      "role": "API / developer resource",
+      "website": "https://cian-x402.netlify.app",
+      "logo": null,
+      "description": "Pay-per-call HTTP and TLS endpoint audits.",
+      "docs": null,
+      "endpoint": "https://cian-x402.netlify.app",
+      "networks": [
+        "Base"
+      ],
+      "paymentAddresses": [
+        {
+          "network": "Base",
+          "address": "0x7373e88368378052eb5a449d2ebc95ad7e5f2bef"
+        }
+      ],
+      "settlementExamples": [
+        {
+          "network": "Base",
+          "token": "USDC",
+          "amount": 0.002,
+          "transaction": "0x1d87c15d98f6e9d35b1cc7d3ea2139d1117df0459912cfb79817e741ccc4b11c",
+          "explorer": "https://basescan.org/tx/0x1d87c15d98f6e9d35b1cc7d3ea2139d1117df0459912cfb79817e741ccc4b11c",
+          "receiptStatus": "success",
+          "recipientAmountMatched": true,
+          "operatorSelfPayment": true,
+          "customerIdentityVerified": false
+        }
+      ],
+      "supportedVersions": [],
+      "supportedSchemes": [],
+      "approval": {
+        "status": "approved_basic_directory",
+        "by": "X402blockchains",
+        "date": "2026-11-27",
+        "decisionUrl": "https://github.com/X402blockchains/awesome-x402/pull/12#pullrequestreview-6077264946",
+        "submissionUrl": "https://github.com/X402blockchains/awesome-x402/pull/12",
+        "submissionHead": "5ba53fbf49d77f801f7c41dcdaafb70f80ec76b7",
+        "scope": "Basic directory inclusion with checked Base USDC payment evidence. No broader verification badge."
+      },
+      "x402scan": {
+        "profile": "https://www.x402scan.com/server/b4f4aee0-1fef-4d6e-b8bd-ebc648b80b84",
+        "origin": "https://cian-x402.netlify.app",
+        "past30DayTransactionsAtReview": 2,
+        "source": "x402scan recipient-based index; not API request counts or verified customer counts."
+      },
+      "publication": {
+        "batch": 4,
+        "status": "prepared_not_published",
+        "date": null,
+        "prePublicationChecks": [
+          "Check the canonical website and current unpaid payment terms before publication.",
+          "Confirm the official logo asset and its display.",
+          "Keep Basic listing distinct from route-delivery, security or facilitator verification.",
+          "Obtain or confirm the official logo; no placeholder logo is supplied."
+        ]
+      }
+    }
+  ]
+}

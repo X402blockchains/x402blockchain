@@ -1,0 +1,63 @@
+{
+  "name": "YRUZ",
+  "role": "API / developer resource",
+  "website": "https://yruz.one",
+  "logo": "https://yruz.one/content/themes/yruz/images/favicon.png",
+  "description": "Crypto, web and developer APIs with x402 payments.",
+  "docs": "https://yruz.one/llms.txt",
+  "endpoint": "https://yruz.one",
+  "networks": [
+    "Base"
+  ],
+  "paymentAddresses": [
+    {
+      "network": "Base",
+      "address": "0x235b73d50752800d9fae24f51beb08f47076c67a"
+    }
+  ],
+  "settlementExamples": [
+    {
+      "network": "Base",
+      "token": "USDC",
+      "amount": 0.002,
+      "transaction": "0x2f43baf6017e57203b047cbbb1464810f2f4533f61b53fa5e16ac398230f12f5",
+      "explorer": "https://basescan.org/tx/0x2f43baf6017e57203b047cbbb1464810f2f4533f61b53fa5e16ac398230f12f5",
+      "receiptStatus": "success",
+      "recipientAmountMatched": true,
+      "operatorSelfPayment": false,
+      "customerIdentityVerified": false
+    }
+  ],
+  "supportedVersions": [
+    2
+  ],
+  "supportedSchemes": [
+    "exact"
+  ],
+  "approval": {
+    "status": "approved_basic_directory",
+    "by": "X402blockchains",
+    "date": "2026-11-27",
+    "decisionUrl": "https://github.com/X402blockchains/x402-registry/pull/18#pullrequestreview-6077258422",
+    "submissionUrl": "https://github.com/X402blockchains/x402-registry/pull/18",
+    "submissionHead": "08102a719838f140734708ba1803ab605d5feef5",
+    "scope": "Basic directory inclusion with checked Base USDC payment evidence. No broader verification badge."
+  },
+  "x402scan": {
+    "profile": "https://www.x402scan.com/server/104439b5-1e1b-400d-9907-354ddfee942e",
+    "origin": "https://yruz.one",
+    "past30DayTransactionsAtReview": 3,
+    "source": "x402scan recipient-based index; not API request counts or verified customer counts."
+  },
+  "publication": {
+    "batch": 3,
+    "status": "prepared_not_published",
+    "date": null,
+    "prePublicationChecks": [
+      "Check the canonical website and current unpaid payment terms before publication.",
+      "Confirm the official logo asset and its display.",
+      "Keep Basic listing distinct from route-delivery, security or facilitator verification.",
+      "Confirm the current paid route recipient against the payment challenge; the discovery document did not contain the indexed recipient."
+    ]
+  }
+}

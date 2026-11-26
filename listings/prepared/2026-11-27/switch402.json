@@ -1,0 +1,59 @@
+{
+  "name": "Switch402",
+  "role": "API / developer resource",
+  "website": "https://switch402.fly.dev",
+  "logo": null,
+  "description": "Pay-per-call inference and action tools for software agents.",
+  "docs": null,
+  "endpoint": "https://switch402.fly.dev",
+  "networks": [
+    "Base"
+  ],
+  "paymentAddresses": [
+    {
+      "network": "Base",
+      "address": "0xedc5e77f1f0a2dd9ab919687d54af2f312387a63"
+    }
+  ],
+  "settlementExamples": [
+    {
+      "network": "Base",
+      "token": "USDC",
+      "amount": 0.07,
+      "transaction": "0x2fa0a5a2722e9f94622d6f726d40c30bef2fcb08c26c7c8d7fd4bddcb1744e45",
+      "explorer": "https://basescan.org/tx/0x2fa0a5a2722e9f94622d6f726d40c30bef2fcb08c26c7c8d7fd4bddcb1744e45",
+      "receiptStatus": "success",
+      "recipientAmountMatched": true,
+      "operatorSelfPayment": true,
+      "customerIdentityVerified": false
+    }
+  ],
+  "supportedVersions": [],
+  "supportedSchemes": [],
+  "approval": {
+    "status": "approved_basic_directory",
+    "by": "X402blockchains",
+    "date": "2026-11-27",
+    "decisionUrl": "https://github.com/X402blockchains/awesome-x402/pull/23#pullrequestreview-6077262787",
+    "submissionUrl": "https://github.com/X402blockchains/awesome-x402/pull/23",
+    "submissionHead": "0ab2e629a1a9c7a650428aab823d9e288cb6769b",
+    "scope": "Basic directory inclusion with checked Base USDC payment evidence. No broader verification badge."
+  },
+  "x402scan": {
+    "profile": "https://www.x402scan.com/server/d1b06f8b-03cf-4c10-87fa-f8d6db630ef9",
+    "origin": "https://switch402.fly.dev",
+    "past30DayTransactionsAtReview": 27,
+    "source": "x402scan recipient-based index; not API request counts or verified customer counts."
+  },
+  "publication": {
+    "batch": 2,
+    "status": "prepared_not_published",
+    "date": null,
+    "prePublicationChecks": [
+      "Check the canonical website and current unpaid payment terms before publication.",
+      "Confirm the official logo asset and its display.",
+      "Keep Basic listing distinct from route-delivery, security or facilitator verification.",
+      "Obtain or confirm the official logo; no placeholder logo is supplied."
+    ]
+  }
+}

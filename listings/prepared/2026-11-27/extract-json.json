@@ -1,0 +1,59 @@
+{
+  "name": "Extract JSON",
+  "role": "API / developer resource",
+  "website": "https://extract-json.mintfacts.workers.dev",
+  "logo": null,
+  "description": "Convert text into schema-valid JSON through a pay-per-call API.",
+  "docs": null,
+  "endpoint": "https://extract-json.mintfacts.workers.dev",
+  "networks": [
+    "Base"
+  ],
+  "paymentAddresses": [
+    {
+      "network": "Base",
+      "address": "0x59d0d643f1c91aca0b1dcd4be20edf188645845f"
+    }
+  ],
+  "settlementExamples": [
+    {
+      "network": "Base",
+      "token": "USDC",
+      "amount": 0.002,
+      "transaction": "0xc24f1814c0887692d16fbd42f9871f31e9da0bb77e756b3039a52664563980cc",
+      "explorer": "https://basescan.org/tx/0xc24f1814c0887692d16fbd42f9871f31e9da0bb77e756b3039a52664563980cc",
+      "receiptStatus": "success",
+      "recipientAmountMatched": true,
+      "operatorSelfPayment": false,
+      "customerIdentityVerified": false
+    }
+  ],
+  "supportedVersions": [],
+  "supportedSchemes": [],
+  "approval": {
+    "status": "approved_basic_directory",
+    "by": "X402blockchains",
+    "date": "2026-11-27",
+    "decisionUrl": "https://github.com/X402blockchains/awesome-x402/pull/24#pullrequestreview-6077261749",
+    "submissionUrl": "https://github.com/X402blockchains/awesome-x402/pull/24",
+    "submissionHead": "532721c52977299a9fc9363642277e770012089e",
+    "scope": "Basic directory inclusion with checked Base USDC payment evidence. No broader verification badge."
+  },
+  "x402scan": {
+    "profile": "https://www.x402scan.com/server/7f8cbb57-8bc8-49f3-adbf-0a78ec5a63ec",
+    "origin": "https://extract-json.mintfacts.workers.dev",
+    "past30DayTransactionsAtReview": 11,
+    "source": "x402scan recipient-based index; not API request counts or verified customer counts."
+  },
+  "publication": {
+    "batch": 2,
+    "status": "prepared_not_published",
+    "date": null,
+    "prePublicationChecks": [
+      "Check the canonical website and current unpaid payment terms before publication.",
+      "Confirm the official logo asset and its display.",
+      "Keep Basic listing distinct from route-delivery, security or facilitator verification.",
+      "Obtain or confirm the official logo; no placeholder logo is supplied."
+    ]
+  }
+}

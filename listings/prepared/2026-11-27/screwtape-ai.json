@@ -1,0 +1,59 @@
+{
+  "name": "Screwtape.ai",
+  "role": "API / developer resource",
+  "website": "https://screwtape.ai",
+  "logo": null,
+  "description": "Agent spending guardrails, decisions and payment-related receipts.",
+  "docs": null,
+  "endpoint": "https://screwtape.ai",
+  "networks": [
+    "Base"
+  ],
+  "paymentAddresses": [
+    {
+      "network": "Base",
+      "address": "0x028bb9a57b8c27c22f6b39dd00e7eff1fb60344b"
+    }
+  ],
+  "settlementExamples": [
+    {
+      "network": "Base",
+      "token": "USDC",
+      "amount": 0.003,
+      "transaction": "0x80259c21d9b1bf6bbb4e0f888f2f6e2f9a3c76e07857ec8fab674f513585c503",
+      "explorer": "https://basescan.org/tx/0x80259c21d9b1bf6bbb4e0f888f2f6e2f9a3c76e07857ec8fab674f513585c503",
+      "receiptStatus": "success",
+      "recipientAmountMatched": true,
+      "operatorSelfPayment": false,
+      "customerIdentityVerified": false
+    }
+  ],
+  "supportedVersions": [],
+  "supportedSchemes": [],
+  "approval": {
+    "status": "approved_basic_directory",
+    "by": "X402blockchains",
+    "date": "2026-11-27",
+    "decisionUrl": "https://github.com/X402blockchains/awesome-x402/issues/20#issuecomment-7197209030",
+    "submissionUrl": "https://github.com/X402blockchains/awesome-x402/issues/20",
+    "submissionHead": null,
+    "scope": "Basic directory inclusion with checked Base USDC payment evidence. No broader verification badge."
+  },
+  "x402scan": {
+    "profile": "https://www.x402scan.com/server/c3b854a5-627d-4369-83e2-eee7d029996f",
+    "origin": "https://screwtape.ai",
+    "past30DayTransactionsAtReview": 29,
+    "source": "x402scan recipient-based index; not API request counts or verified customer counts."
+  },
+  "publication": {
+    "batch": 2,
+    "status": "prepared_not_published",
+    "date": null,
+    "prePublicationChecks": [
+      "Check the canonical website and current unpaid payment terms before publication.",
+      "Confirm the official logo asset and its display.",
+      "Keep Basic listing distinct from route-delivery, security or facilitator verification.",
+      "Obtain or confirm the official logo; no placeholder logo is supplied."
+    ]
+  }
+}

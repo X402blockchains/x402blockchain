@@ -1,0 +1,63 @@
+{
+  "name": "Grey Ridge Signals",
+  "role": "API / developer resource",
+  "website": "https://greyridgesignals.ai",
+  "logo": "https://greyridgesignals.ai/favicon.svg",
+  "description": "Pay-per-call crypto market and on-chain data APIs.",
+  "docs": "https://x402-data-api.sigrunner.workers.dev/llms.txt",
+  "endpoint": "https://x402-data-api.sigrunner.workers.dev",
+  "networks": [
+    "Base"
+  ],
+  "paymentAddresses": [
+    {
+      "network": "Base",
+      "address": "0x5765ae06a52dc7a0bb71c36a11db512c7ea9ed10"
+    }
+  ],
+  "settlementExamples": [
+    {
+      "network": "Base",
+      "token": "USDC",
+      "amount": 0.001,
+      "transaction": "0xed8a9697e110347253d26460f09cb98f65e1d36931355e4a61abd42c2c4b2f4e",
+      "explorer": "https://basescan.org/tx/0xed8a9697e110347253d26460f09cb98f65e1d36931355e4a61abd42c2c4b2f4e",
+      "receiptStatus": "success",
+      "recipientAmountMatched": true,
+      "operatorSelfPayment": false,
+      "customerIdentityVerified": false
+    }
+  ],
+  "supportedVersions": [
+    2
+  ],
+  "supportedSchemes": [
+    "exact"
+  ],
+  "approval": {
+    "status": "approved_basic_directory",
+    "by": "X402blockchains",
+    "date": "2026-11-27",
+    "decisionUrl": "https://github.com/X402blockchains/x402-registry/pull/19#pullrequestreview-6077257608",
+    "submissionUrl": "https://github.com/X402blockchains/x402-registry/pull/19",
+    "submissionHead": "dd0656e106ad9fa6bef86afca5fa21e44e856705",
+    "scope": "Basic directory inclusion with checked Base USDC payment evidence. No broader verification badge."
+  },
+  "x402scan": {
+    "profile": "https://www.x402scan.com/server/ece5255c-297a-4af6-9c8b-f32925f81f32",
+    "origin": "https://x402-data-api.sigrunner.workers.dev",
+    "past30DayTransactionsAtReview": 200,
+    "source": "x402scan recipient-based index; not API request counts or verified customer counts."
+  },
+  "publication": {
+    "batch": 4,
+    "status": "prepared_not_published",
+    "date": null,
+    "prePublicationChecks": [
+      "Check the canonical website and current unpaid payment terms before publication.",
+      "Confirm the official logo asset and its display.",
+      "Keep Basic listing distinct from route-delivery, security or facilitator verification.",
+      "Repeat the public discovery check; the previous review fetch was unavailable: HTTP Error 403: Forbidden"
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "name": "Neon Developer API",
+  "role": "API / developer resource",
+  "website": "https://neon-api.austneo.workers.dev",
+  "logo": "https://raw.githubusercontent.com/austneo/neon-api/main/logo.svg",
+  "description": "Web-page conversion to Markdown and structured link extraction.",
+  "docs": "https://neon-api.austneo.workers.dev/docs",
+  "endpoint": "https://neon-api.austneo.workers.dev",
+  "networks": [
+    "Base"
+  ],
+  "paymentAddresses": [
+    {
+      "network": "Base",
+      "address": "0xfbf41f92592b3ff315983e41f058c21a1e8b8d48"
+    }
+  ],
+  "settlementExamples": [
+    {
+      "network": "Base",
+      "token": "USDC",
+      "amount": 0.01,
+      "transaction": "0x78a08f4014bd97cf2934ac281638b1ff33696ca06038def098fd3c263329478b",
+      "explorer": "https://basescan.org/tx/0x78a08f4014bd97cf2934ac281638b1ff33696ca06038def098fd3c263329478b",
+      "receiptStatus": "success",
+      "recipientAmountMatched": true,
+      "operatorSelfPayment": false,
+      "customerIdentityVerified": false
+    }
+  ],
+  "supportedVersions": [
+    2
+  ],
+  "supportedSchemes": [
+    "exact"
+  ],
+  "approval": {
+    "status": "approved_basic_directory",
+    "by": "X402blockchains",
+    "date": "2026-11-27",
+    "decisionUrl": "https://github.com/X402blockchains/x402-registry/pull/52#pullrequestreview-6077246440",
+    "submissionUrl": "https://github.com/X402blockchains/x402-registry/pull/52",
+    "submissionHead": "73247d47d4a595bd5a1b7380118d4bfa05f55098",
+    "scope": "Basic directory inclusion with checked Base USDC payment evidence. No broader verification badge."
+  },
+  "x402scan": {
+    "profile": "https://www.x402scan.com/server/3f66a86a-aed6-49e4-b582-d8517444e898",
+    "origin": "https://neon-api.austneo.workers.dev",
+    "past30DayTransactionsAtReview": 1,
+    "source": "x402scan recipient-based index; not API request counts or verified customer counts."
+  },
+  "publication": {
+    "batch": 3,
+    "status": "prepared_not_published",
+    "date": null,
+    "prePublicationChecks": [
+      "Check the canonical website and current unpaid payment terms before publication.",
+      "Confirm the official logo asset and its display.",
+      "Keep Basic listing distinct from route-delivery, security or facilitator verification.",
+      "Repeat the public discovery check; the previous review fetch was unavailable: HTTP Error 403: Forbidden"
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "name": "Pyfile",
+  "role": "API / developer resource",
+  "website": "https://pyfile-agent.taile3ff35.ts.net/llms.txt",
+  "logo": "https://pyfile-agent.taile3ff35.ts.net/favicon.svg",
+  "description": "Pay-per-call web search, page conversion and developer tools.",
+  "docs": "https://pyfile-agent.taile3ff35.ts.net/llms.txt",
+  "endpoint": "https://pyfile-agent.taile3ff35.ts.net",
+  "networks": [
+    "Base"
+  ],
+  "paymentAddresses": [
+    {
+      "network": "Base",
+      "address": "0xa43774fd2e867fc45b782456d78f135a215d5561"
+    }
+  ],
+  "settlementExamples": [
+    {
+      "network": "Base",
+      "token": "USDC",
+      "amount": 0.003,
+      "transaction": "0x1932f926875eaf31d674228de903c75ed119570ff385e546333075ca40749dba",
+      "explorer": "https://basescan.org/tx/0x1932f926875eaf31d674228de903c75ed119570ff385e546333075ca40749dba",
+      "receiptStatus": "success",
+      "recipientAmountMatched": true,
+      "operatorSelfPayment": false,
+      "customerIdentityVerified": false
+    }
+  ],
+  "supportedVersions": [
+    2
+  ],
+  "supportedSchemes": [
+    "exact"
+  ],
+  "approval": {
+    "status": "approved_basic_directory",
+    "by": "X402blockchains",
+    "date": "2026-11-27",
+    "decisionUrl": "https://github.com/X402blockchains/x402-registry/pull/44#pullrequestreview-6077248742",
+    "submissionUrl": "https://github.com/X402blockchains/x402-registry/pull/44",
+    "submissionHead": "ffe3ea05ef801d080ec76c21f2a63d2dd54eebb1",
+    "scope": "Basic directory inclusion with checked Base USDC payment evidence. No broader verification badge."
+  },
+  "x402scan": {
+    "profile": "https://www.x402scan.com/server/7a30fe67-c742-4f7b-a2f5-9b126045b709",
+    "origin": "https://pyfile-agent.taile3ff35.ts.net",
+    "past30DayTransactionsAtReview": 89,
+    "source": "x402scan recipient-based index; not API request counts or verified customer counts."
+  },
+  "publication": {
+    "batch": 4,
+    "status": "prepared_not_published",
+    "date": null,
+    "prePublicationChecks": [
+      "Check the canonical website and current unpaid payment terms before publication.",
+      "Confirm the official logo asset and its display.",
+      "Keep Basic listing distinct from route-delivery, security or facilitator verification.",
+      "Repeat the public discovery check; the previous review fetch was unavailable: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    ]
+  }
+}
